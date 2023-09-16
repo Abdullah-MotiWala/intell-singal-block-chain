@@ -1,48 +1,42 @@
 import React from "react";
 import TopBar from "../components/shared/TopBar";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import allPlans, {
+  Plan1,
+  Plan2,
+  Plan3,
+  Plan4,
+  Plan5
+} from "../components/shared/PlanCollections";
 
 const ActivePackage = () => {
-  const {
-    user: { user }
-  } = useSelector((state) => state.user);
-
+  const { user } = useSelector((state) => state.user);
+  console.log(user);
   return (
     <div className="">
-      <TopBar />
+      {String(user?.purchased_plan) && <TopBar />}
       <div className="bg-white h-[70vh] overflow-y-auto mt-4 rounded-md flex flex-col items-center justify-center">
-        <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in mx-6">
-          <div className="flex justify-around ">
-            <p className="font-bold text-gray-800 text-4xl">Basic</p>
-            
-            <h3 className="text-white text-4xl font-bold ">Free</h3>
-          </div>
-
-          <div className="flex flex-col mx-6 pb-2 ">
-            <div className="border-b py-5">
-              <p className="text-white">The perfect solution to try out</p>
-            </div>
-            <div className="border-b py-5">
-              <div className="flex">
-                <p className="text-white font-bold">Number of days</p>
-                <p className="text-white ml-auto font-semibold">1</p>
-              </div>
-              <div className="flex">
-                <p className="text-white font-semibold">Number of Signals</p>
-                <p className="text-white ml-auto font-bold">1</p>
-              </div>
-            </div>
-            <div className="py-5">
-              <ul className="list-none list-outside text-white text-sm">
-                <li>1 Free Signal per day</li>
-                <li>
-                  Perfect for beginners and those looking to dip their toes into
-                  crypto trading.
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        {(user?.purchased_plan === null ||
+          user?.purchased_plan === undefined) && (
+          <>
+            {" "}
+            <h1 className="text-3xl font-bold text-gray-900 mb-6">
+              No Plan Found
+            </h1>
+            <Link
+              to={"/"}
+              className="button panel-primary-bg rounded-xl text-white font-bold p-4"
+            >
+              Buy Plan
+            </Link>
+          </>
+        )}
+        {user?.purchased_plan == 0 && <Plan1 />}
+        {user?.purchased_plan == 1 && <Plan2 />}
+        {user?.purchased_plan == 2 && <Plan3 />}
+        {user?.purchased_plan == 3 && <Plan4 />}
+        {user?.purchased_plan == 4 && <Plan5 />}
       </div>
     </div>
   );

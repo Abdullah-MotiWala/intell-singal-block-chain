@@ -2,207 +2,226 @@ import { useState } from "react";
 import {
   prepareWriteContract,
   waitForTransaction,
-  writeContract,
+  writeContract
 } from "@wagmi/core";
 import { useAccount } from "wagmi";
-import { IntellSignals_Abi, IntellSignals_address, Token_Abi, Token_Address } from "../utils/Contract";
+import {
+  IntellSignals_Abi,
+  IntellSignals_address,
+  Token_Abi,
+  Token_Address
+} from "../utils/Contract";
 import Web3 from "web3";
 import { toast } from "react-hot-toast";
-
+import { useNavigate } from "react-router-dom";
+import { api } from "../utils/api";
+import { useDispatch, useSelector } from "react-redux";
+import { setPlan, setUser } from "../store/user";
 
 const Plans = () => {
-  const [spinner, setspinner] = useState(false)
-  const [plan_data, setplan_data] = useState(0)
+  const { user } = useSelector((state) => state.user);
+  const { token } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [spinner, setspinner] = useState(false);
+  const [plan_data, setplan_data] = useState(0);
   const { address } = useAccount();
 
-  const webSupply = new Web3("https://bsc-testnet.publicnode.com")
+  const associatePlanToUser = async (plan_id) => {
+    const body = { plan_id };
+    const response = await api("purchase-plan", "PUT", body, token);
+    if (response.success) {
+      dispatch(setPlan(plan_id));
+      navigate("/panel/dashboard");
+    }
+  };
+
+  const webSupply = new Web3("https://bsc-testnet.publicnode.com");
   const buyPackage = async (plan, amount) => {
+    if (!token) {
+      toast.error("Please login to proceed further");
+      navigate("/login");
+      return;
+    }
     try {
       if (address) {
         // console.log("amount", webSupply);
         if (plan == 0) {
-          setspinner(true)
+          setspinner(true);
           const { request } = await prepareWriteContract({
             address: Token_Address,
             abi: Token_Abi,
             functionName: "approve",
-            args: [IntellSignals_address, amount*1000000000000000000],
-            account: address,
+            args: [IntellSignals_address, amount * 1000000000000000000],
+            account: address
           });
           const { hash } = await writeContract(request);
           const data = await waitForTransaction({
-            hash,
+            hash
           });
-          toast.success("First transaction successfully Compeleted")
-          setspinner(false)
+          toast.success("First transaction successfully Compeleted");
+          setspinner(false);
 
           setTimeout(async () => {
-            setspinner(true)
+            setspinner(true);
 
             const { request } = await prepareWriteContract({
               address: IntellSignals_address,
               abi: IntellSignals_Abi,
               functionName: "BuyPackage",
-              args: [plan, amount*1000000000000000000],
-              account: address,
+              args: [plan, amount * 1000000000000000000],
+              account: address
             });
             const { hash } = await writeContract(request);
             const data = await waitForTransaction({
-              hash,
+              hash
             });
-            toast.success("Great! You've successfully Buy Package🎉")
-            setspinner(false)
-
-
+            await associatePlanToUser(0);
+            toast.success("Great! You've successfully Buy Package🎉");
+            setspinner(false);
           }, 2000);
-        } 
-        
-        else if (plan == 1) {
+        } else if (plan == 1) {
           console.log("yes i clicked");
-          setspinner(true)
+          setspinner(true);
 
           const { request } = await prepareWriteContract({
             address: Token_Address,
             abi: Token_Abi,
             functionName: "approve",
-            args: [IntellSignals_address, amount*1000000000000000000],
-            account: address,
+            args: [IntellSignals_address, amount * 1000000000000000000],
+            account: address
           });
           const { hash } = await writeContract(request);
           const data = await waitForTransaction({
-            hash,
+            hash
           });
-          toast.success("First transaction successfully Compeleted")
+          toast.success("First transaction successfully Compeleted");
 
           setTimeout(async () => {
-            setspinner(true)
+            setspinner(true);
 
             const { request } = await prepareWriteContract({
               address: IntellSignals_address,
               abi: IntellSignals_Abi,
               functionName: "BuyPackage",
-              args: [plan, amount*1000000000000000000],
-              account: address,
+              args: [plan, amount * 1000000000000000000],
+              account: address
             });
             const { hash } = await writeContract(request);
             const data = await waitForTransaction({
-              hash,
+              hash
             });
-            toast.success("Great! You've successfully Buy Package🎉")
-            setspinner(false)
-
+            await associatePlanToUser(1);
+            toast.success("Great! You've successfully Buy Package🎉");
+            setspinner(false);
           }, 2000);
-
         } else if (plan == 2) {
-          setspinner(true)
+          setspinner(true);
 
           const { request } = await prepareWriteContract({
             address: Token_Address,
             abi: Token_Abi,
             functionName: "approve",
-            args: [IntellSignals_address, amount*1000000000000000000],
-            account: address,
+            args: [IntellSignals_address, amount * 1000000000000000000],
+            account: address
           });
           const { hash } = await writeContract(request);
           const data = await waitForTransaction({
-            hash,
+            hash
           });
-          toast.success("First transaction successfully Compeleted")
+          toast.success("First transaction successfully Compeleted");
 
           setTimeout(async () => {
             const { request } = await prepareWriteContract({
               address: IntellSignals_address,
               abi: IntellSignals_Abi,
               functionName: "BuyPackage",
-              args: [plan, amount*1000000000000000000],
-              account: address,
+              args: [plan, amount * 1000000000000000000],
+              account: address
             });
             const { hash } = await writeContract(request);
             const data = await waitForTransaction({
-              hash,
+              hash
             });
-            toast.success("Great! You've successfully Buy Package🎉")
-            setspinner(false)
-
+            await associatePlanToUser(2);
+            toast.success("Great! You've successfully Buy Package🎉");
+            setspinner(false);
           }, 2000);
-
         } else if (plan == 3) {
-          setspinner(true)
+          setspinner(true);
 
           const { request } = await prepareWriteContract({
             address: Token_Address,
             abi: Token_Abi,
             functionName: "approve",
-            args: [IntellSignals_address, amount*1000000000000000000],
-            account: address,
+            args: [IntellSignals_address, amount * 1000000000000000000],
+            account: address
           });
           const { hash } = await writeContract(request);
           const data = await waitForTransaction({
-            hash,
+            hash
           });
-          toast.success("First transaction successfully Compeleted")
+          toast.success("First transaction successfully Compeleted");
 
           setTimeout(async () => {
             const { request } = await prepareWriteContract({
               address: IntellSignals_address,
               abi: IntellSignals_Abi,
               functionName: "BuyPackage",
-              args: [plan, amount*1000000000000000000],
-              account: address,
+              args: [plan, amount * 1000000000000000000],
+              account: address
             });
             const { hash } = await writeContract(request);
             const data = await waitForTransaction({
-              hash,
+              hash
             });
-            toast.success("Great! You've successfully Buy Package🎉")
-            setspinner(false)
-
+            await associatePlanToUser(3);
+            toast.success("Great! You've successfully Buy Package🎉");
+            setspinner(false);
           }, 2000);
         } else {
-          setspinner(true)
+          setspinner(true);
 
           const { request } = await prepareWriteContract({
             address: Token_Address,
             abi: Token_Abi,
             functionName: "approve",
-            args: [IntellSignals_address, amount*1000000000000000000],
-            account: address,
+            args: [IntellSignals_address, amount * 1000000000000000000],
+            account: address
           });
           const { hash } = await writeContract(request);
           const data = await waitForTransaction({
-            hash,
+            hash
           });
-          toast.success("First transaction successfully Compeleted")
+          toast.success("First transaction successfully Compeleted");
 
           setTimeout(async () => {
             const { request } = await prepareWriteContract({
               address: IntellSignals_address,
               abi: IntellSignals_Abi,
               functionName: "BuyPackage",
-              args: [plan, amount*1000000000000000000],
-              account: address,
+              args: [plan, amount * 1000000000000000000],
+              account: address
             });
             const { hash } = await writeContract(request);
             const data = await waitForTransaction({
-              hash,
+              hash
             });
-            toast.success("Great! You've successfully Buy Package🎉")
-            setspinner(false)
-
+            await associatePlanToUser(4);
+            toast.success("Great! You've successfully Buy Package🎉");
+            setspinner(false);
           }, 2000);
         }
       } else {
-        toast.error("Please Connect Wallet First! ")
-        setspinner(false)
-
+        toast.error("Please Connect Wallet First! ");
+        setspinner(false);
       }
-
     } catch (error) {
       console.log(error);
-      setspinner(false)
-
+      toast.error(error.message);
+      setspinner(false);
     }
-  }
+  };
   return (
     <div
       className=" flex flex-col bg-gray-200 items-center py-8  w-full "
@@ -248,15 +267,15 @@ const Plans = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+              <button
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
                 onClick={() => (buyPackage(0, 0), setplan_data(0))}
               >
-                {
-                  plan_data == 0 ?
-                    spinner ? "Loading..." : "Buy Now"
+                {plan_data == 0
+                  ? spinner
+                    ? "Loading..."
                     : "Buy Now"
-
-                }
+                  : "Buy Now"}
               </button>
             </div>
           </div>
@@ -295,15 +314,15 @@ const Plans = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
-                onClick={() => (buyPackage(1, 10), setplan_data(1))}>
-
-                {
-                  plan_data == 1 ?
-                    spinner ? "Loading..." : "Buy Now"
+              <button
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+                onClick={() => (buyPackage(1, 10), setplan_data(1))}
+              >
+                {plan_data == 1
+                  ? spinner
+                    ? "Loading..."
                     : "Buy Now"
-
-                }
+                  : "Buy Now"}
               </button>
             </div>
           </div>
@@ -343,16 +362,15 @@ const Plans = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+              <button
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
                 onClick={() => (buyPackage(2, 100), setplan_data(2))}
               >
-
-                {
-                  plan_data == 2 ?
-                    spinner ? "Loading..." : "Buy Now"
+                {plan_data == 2
+                  ? spinner
+                    ? "Loading..."
                     : "Buy Now"
-
-                }
+                  : "Buy Now"}
               </button>
             </div>
           </div>
@@ -364,7 +382,9 @@ const Plans = () => {
             {" "}
             Discounted Rates
           </div>
-          <div className="text-3xl text-gray-700 font-normal">3 Months Subscription</div>
+          <div className="text-3xl text-gray-700 font-normal">
+            3 Months Subscription
+          </div>
         </h2>
         <div className="flex py-6 flex-col items-center w-full md:flex-row md:items-stretch md:justify-center gap-8">
           <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
@@ -406,16 +426,15 @@ const Plans = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+              <button
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
                 onClick={() => (buyPackage(3, 15), setplan_data(3))}
-
               >
-                {
-                  plan_data == 3 ?
-                    spinner ? "Loading..." : "Buy Now"
+                {plan_data == 3
+                  ? spinner
+                    ? "Loading..."
                     : "Buy Now"
-
-                }
+                  : "Buy Now"}
               </button>
             </div>
           </div>
@@ -453,16 +472,15 @@ const Plans = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+              <button
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
                 onClick={() => (buyPackage(4, 20), setplan_data(4))}
-
               >
-                {
-                  plan_data == 4 ?
-                    spinner ? "Loading..." : "Buy Now"
+                {plan_data == 4
+                  ? spinner
+                    ? "Loading..."
                     : "Buy Now"
-
-                }
+                  : "Buy Now"}
               </button>
             </div>
           </div>

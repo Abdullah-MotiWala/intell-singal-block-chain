@@ -19,6 +19,9 @@ import OurTrader from "../sections/OurTrader";
 import InfoBox from "../sections/InfoBox";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 const Home = () => {
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.user);
@@ -33,6 +36,7 @@ const Home = () => {
 
   return (
     <>
+      <Navbar />
       <div
         className="flex flex-col items-center mt-20 mb-4 lg:flex-row  w-full   min-h-screen"
         id="home"
@@ -69,6 +73,7 @@ const Home = () => {
               > */}
                 Start Now
               {/* </Link> */}
+              {/* </Link> */}
             </span>
           </button>
         </div>
@@ -100,6 +105,8 @@ const Home = () => {
       <DemandAppBanner handleRoute={handleRoute}/>
       <FoundingPartners />
       <FAQ />
+
+      <Footer />
     </>
   );
 };

@@ -9,13 +9,11 @@ import { LuPackageCheck } from "react-icons/lu";
 import { LiaHistorySolid } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setToken } from "../../store/user";
+import { setToken, signOut } from "../../store/user";
 
 function Sidebar({ isOpen }) {
   const dispatch = useDispatch();
-  const {
-    user: { user }
-  } = useSelector((state) => state.user);
+  const { user } = useSelector((state) => state.user);
   return (
     <div
       className={`${
@@ -25,14 +23,14 @@ function Sidebar({ isOpen }) {
       <div className="flex justify-center w-full">
         <div className="w-32 h-32 overflow-hidden flex justify-center items-center rounded-full outline outline-offset-4 outline-1 outline-red-500">
           <img
-            src={`${user.profile_image || "/img/avatar.png"} `}
+            src={`${user?.profile_image || "/img/avatar.png"} `}
             className="w-full h-full object-cover"
             alt="Avatar"
           />
         </div>
       </div>
       <div className="text-center">
-        <h2 className="font-bold text-red-500 text-xl mt-4">{user.name}</h2>
+        <h2 className="font-bold text-red-500 text-xl mt-4">{user?.name}</h2>
       </div>
       <div className="flex flex-col h-full px-2 my-4">
         <NavLink
@@ -43,6 +41,15 @@ function Sidebar({ isOpen }) {
         >
           <MdOutlineSpaceDashboard className="mr-2 w-6 h-6" />
           <p>Dashboard</p>
+        </NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "custom-active-link" : "custom-link"
+          }
+        >
+          <MdOutlineSpaceDashboard className="mr-2 w-6 h-6" />
+          <p>Go To Home</p>
         </NavLink>
         <NavLink
           to="/panel/plan"
@@ -89,10 +96,7 @@ function Sidebar({ isOpen }) {
           <LiaHistorySolid className="mr-2 w-6 h-6" />
           <p>History</p>
         </NavLink>
-        <NavLink
-          onClick={() => dispatch(setToken(null))}
-          className={"custom-link"}
-        >
+        <NavLink onClick={() => dispatch(signOut())} className={"custom-link"}>
           <FiLogOut className="mr-2 w-6 h-6" />
           <p>Logout</p>
         </NavLink>

@@ -4,9 +4,11 @@ import { Link } from "react-scroll";
 import { Router, Link as RouterLink, useLocation } from "react-router-dom";
 import { ConnectButton, useConnectModal } from "@rainbow-me/rainbowkit";
 import { scroller } from "react-scroll";
+import { useSelector } from "react-redux";
 const Nav = () => {
   const [opennav, setopennav] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { user } = useSelector((state) => state.user);
 
   const openfun = () => {
     setopennav(!opennav);
@@ -41,7 +43,6 @@ const Nav = () => {
           {/* <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div> */}
           <div className="divide-y w-32 absolute left-1 top-10 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-white py-2 text-gray-900 rounded-lg">
             <div className="cursor-pointer px-4">
-              
               <Link
                 to="whatWeAre"
                 spy={true}
@@ -137,7 +138,7 @@ const Nav = () => {
             </span>
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
           </div>
-          </RouterLink>
+        </RouterLink>
         <Link
           to="introToAI"
           activeClass="active"
@@ -146,25 +147,36 @@ const Nav = () => {
           duration={500}
           onSetActive={this?.handleSetActive}
         >
-
-
-<RouterLink to="Ai_Platform">
-          <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
-              Ai Platform
-            </span>
-            <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
-          </div>
+          <RouterLink to="Ai_Platform">
+            <div className="relative inline-block group cursor-pointer">
+              <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+                Ai Platform
+              </span>
+              <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
+            </div>
           </RouterLink>
         </Link>
-        <RouterLink to="login">
-          <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
-              Login/Signup
-            </span>
-            <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
-          </div>
-        </RouterLink>
+
+        {!user && (
+          <RouterLink to="login">
+            <div className="relative inline-block group cursor-pointer">
+              <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+                Login/Signup
+              </span>
+              <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
+            </div>
+          </RouterLink>
+        )}
+        {user && (
+          <RouterLink to="panel/dashboard">
+            <div className="relative inline-block group cursor-pointer">
+              <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+                Dashboard
+              </span>
+              <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
+            </div>
+          </RouterLink>
+        )}
       </div>
 
       <div className=" ml-auto flex">

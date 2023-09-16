@@ -62,8 +62,7 @@ const Login = () => {
     navigate("/forget-password");
   };
   return (
-    <div className="bg-blue-950 w-full text-center"
-    id="login">
+    <div className="bg-blue-950 w-full text-center" id="login">
       <CustomParticle />
       <div className="w-full my-24 flex justify-center">
         <form
