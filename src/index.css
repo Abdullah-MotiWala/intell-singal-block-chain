@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  .custom-active-link {
+    @apply bg-red-500 text-white my-1 text-lg flex items-center rounded-md py-1 px-2;
+  }
+  .custom-link {
+    @apply my-2 text-lg flex items-center text-gray-800 rounded-md py-1 px-2;
+  }
+  .panel-primary-bg {
+    @apply bg-red-500;
+  }
+  .panel-primary-text {
+    @apply text-red-500;
+  }
+  .custom-caption-text {
+    @apply text-white text-xl font-light opacity-80 ;
+    line-height: 1.4;
+  }
+  .custom-sub-heading {
+    @apply text-[#888888] text-[46px] font-semibold -tracking-[2px];
+    line-height: 1.1;
+  }
+  .custom-main-heading {
+    @apply text-[160px] font-semibold -tracking-[10px];
+    line-height: 0.8;
+  }
+  .custom-mini-heading {
+    @apply text-[66px] font-semibold -tracking-[4px];
+    line-height: 0.9;
+  }
+  .custom-mini-sub-heading {
+    @apply text-3xl font-semibold -tracking-[2px] opacity-25 text-white;
+    line-height: 1.1;
+  }
+  .custom-button {
+    @apply text-lg font-semibold rounded-lg py-3 px-4;
+  }
+}
+
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-animation {
+  animation: count-up 1s ease-out;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
