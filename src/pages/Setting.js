@@ -7,11 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../utils/api";
 
 const Setting = () => {
-  const {
-    user: { user },
-    token
-  } = useSelector((state) => state.user);
-  const userToken = token?.token;
+  const { user, token } = useSelector((state) => state.user);
+  console.log(user)
   const navigate = useNavigate();
 
   const initialData = { email: "", name: "", country: "" };
@@ -21,10 +18,10 @@ const Setting = () => {
     try {
       const payload = { name: data.name };
       if (data.country) payload.country = data.country;
-      alert(imageURL)
+      alert(imageURL);
       if (imageURL) payload.profile_image = imageURL;
 
-      const response = await api("update-profile", "PUT", payload, userToken);
+      const response = await api("update-profile", "PUT", payload, token);
       if (response.success) {
         toast.success("Profile Updated Successfull");
         navigate("/panel/dashboard");
@@ -64,7 +61,7 @@ const Setting = () => {
       name: user.name,
       country: user.country
     };
-    setImageUrl(user.profile_image);
+    setImageUrl(user?.profile_image);
     setData(userData);
   }, [user]);
   return (

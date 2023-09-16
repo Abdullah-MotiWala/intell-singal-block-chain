@@ -17,9 +17,13 @@ import FAQ from "../sections/FAQ";
 import FreeSignals from "../sections/FreeSignals";
 import OurTrader from "../sections/OurTrader";
 import InfoBox from "../sections/InfoBox";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 const Home = () => {
   return (
     <>
+      <Navbar />
       <div
         className="flex flex-col items-center mt-20 mb-4 lg:flex-row  w-full   min-h-screen"
         id="home"
@@ -54,7 +58,7 @@ const Home = () => {
                 onSetActive={this?.handleSetActive}
               >
                 Start Now
-              </Link> 
+              </Link>
             </span>
           </button>
         </div>
@@ -69,7 +73,6 @@ const Home = () => {
 
       <NetworkBanner />
 
-      
       <IntelligentSignalsToken />
       <VideoSection />
       <Plans />
@@ -87,6 +90,8 @@ const Home = () => {
       <DemandAppBanner />
       <FoundingPartners />
       <FAQ />
+
+      <Footer />
     </>
   );
 };

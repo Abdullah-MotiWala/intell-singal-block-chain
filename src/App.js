@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
@@ -16,23 +15,22 @@ import PageNotFound from "./pages/pageNotFound";
 import Setting from "./pages/Setting";
 import UnderDevelopment from "./pages/UnderDevelopment";
 import ActivePackage from "./pages/ActivePackage";
-import ScrollToTopButton from './components/ScrollToTopButton';
+import ScrollToTopButton from "./components/ScrollToTopButton";
 function App() {
   const currentPath = window.location.pathname;
   return (
     <>
       <BrowserRouter>
         <div>
-          {currentPath.split("/")?.[1] !== "panel" && <Navbar />}
           <main className="w-full flex flex-col items-center bg-gr">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/login" element={<Login />} />
               <Route path="/forget-password/" element={<ForgetPassword />} />
-              
-              <Route path="/INSIG" element={<UnderDevelopment  />} />
-              <Route path="/Ai_Platform" element={<UnderDevelopment  />} />
+
+              <Route path="/INSIG" element={<UnderDevelopment />} />
+              <Route path="/Ai_Platform" element={<UnderDevelopment />} />
               <Route
                 path="/update-password/:token"
                 element={<UpdatePassword />}
@@ -49,17 +47,10 @@ function App() {
               <Route path="*" element={<UnderDevelopment />} />
             </Routes>
           </main>
-        
-          {/* Conditionally render the Footer */}
-          {currentPath !== "/login" &&
-            currentPath !== "/forget-password/" &&
-            currentPath !== "/update-password/:token/" &&
-            currentPath !== "/verify-user/:token" &&
-            currentPath.split("/")?.[1] !== "panel" && <Footer />}
         </div>
       </BrowserRouter>
       <div>
-      <ScrollToTopButton/>
+        <ScrollToTopButton />
         <Toaster />
       </div>
     </>
