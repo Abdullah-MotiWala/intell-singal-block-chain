@@ -17,7 +17,20 @@ import FAQ from "../sections/FAQ";
 import FreeSignals from "../sections/FreeSignals";
 import OurTrader from "../sections/OurTrader";
 import InfoBox from "../sections/InfoBox";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
+  const navigate = useNavigate();
+  const { token } = useSelector((state) => state.user);
+  console.log(token, "token");
+  const handleRoute = (token) => {
+    if (token) {
+      navigate('/panel/dashboard')
+    }else{
+      navigate('/login')
+    }
+  };
+
   return (
     <>
       <div
@@ -44,17 +57,18 @@ const Home = () => {
           {/* <button className='mt-4 w-1/2 px-4 py-2 lg:mr-auto font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg hover:translate-y-1 hover:bg-sk1 transition duration-300 ease-in-out '>Start Now</button> */}
           <button className="w-1/2 mt-6 overflow-hidden relative group cursor-pointer  border-2 bg-gray-800 text-[15px] border-yellow-400 text-black hover:scale-105 duration-[700ms] custom-button">
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gradient-to-r from-orange-400 to-red-500 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-            <span className="font-bold relative text-yellow-400 transition duration-[700ms] group-hover:text-white ease">
-              <Link
+            <span className="font-bold relative text-yellow-400 transition duration-[700ms] group-hover:text-white ease" onClick={handleRoute}>
+              {/* <Link
                 to="specialoffers"
                 spy={true}
                 smooth={true}
                 offset={50}
                 duration={500}
                 onSetActive={this?.handleSetActive}
-              >
+                onClick={handleRoute}
+              > */}
                 Start Now
-              </Link> 
+              {/* </Link> */}
             </span>
           </button>
         </div>
@@ -67,14 +81,13 @@ const Home = () => {
         </div>
       </div>
 
-      <NetworkBanner />
+      <NetworkBanner handleRoute={handleRoute}/>
 
-      
       <IntelligentSignalsToken />
-      <VideoSection />
+      <VideoSection handleRoute={handleRoute} />
       <Plans />
       <WhatAreInsig />
-      <FreeSignals />
+      <FreeSignals handleRoute={handleRoute}/>
       <WhyUseInsig />
       <LatestNews />
       <Staking />
@@ -84,7 +97,7 @@ const Home = () => {
       {/* <InfoBox /> */}
 
       <IntelligentSignalEcosystem />
-      <DemandAppBanner />
+      <DemandAppBanner handleRoute={handleRoute}/>
       <FoundingPartners />
       <FAQ />
     </>

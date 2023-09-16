@@ -1,6 +1,6 @@
 import { FaRegLightbulb } from "react-icons/fa";
 
-const VideoSection = () => {
+const VideoSection = ({handleRoute}) => {
   return (
     <div
       className="py-12 flex flex-col items-center w-full min-h-screen"
@@ -65,14 +65,14 @@ const VideoSection = () => {
               <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-cyan-500 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
               <span className="relative text-cyan-500 transition duration-[700ms] group-hover:text-white ease">
                 <div className="flex items-center">
-                  <div class="bg-white p-1 rounded-full mr-4">
+                  <div class="bg-white p-1 rounded-full mr-4" onClick={handleRoute}>
                     <img
                       src="/img/telegram.png"
                       alt="ScreenImage"
                       class="w-6 h-6"
                     />
                   </div>
-                  <span>Join our Telegram</span>
+                  <span >Join our Telegram</span>
                 </div>
               </span>
             </button>

@@ -17,39 +17,41 @@ const [expired, setExpired] = useState(false);
 // Set the expiryDate with a valid date string
 const expiryDate = "2023-09-19";
 
-useEffect(() => {
-  const updateCountdown = () => {
-    const currentTime = new Date();
-    const remainingTimeMillis = new Date(expiryDate) - currentTime;
+let countdownInterval; // Declare countdownInterval outside of useEffect
 
-    if (remainingTimeMillis <= 0) {
-      setExpired(true);
+  useEffect(() => {
+    const updateCountdown = () => {
+      const currentTime = new Date();
+      const remainingTimeMillis = new Date(expiryDate) - currentTime;
+
+      if (remainingTimeMillis <= 0) {
+        setExpired(true);
+        clearInterval(countdownInterval);
+        return;
+      }
+
+      const days = Math.floor(remainingTimeMillis / (1000 * 3600 * 24));
+      const hours = Math.floor((remainingTimeMillis % (1000 * 3600 * 24)) / (1000 * 3600));
+      const minutes = Math.floor((remainingTimeMillis % (1000 * 3600)) / (1000 * 60));
+      const seconds = Math.floor((remainingTimeMillis % (1000 * 60)) / 1000);
+
+      setRemainingDays(days);
+      setRemainingHours(hours);
+      setRemainingMinutes(minutes);
+      setRemainingSeconds(seconds);
+    };
+
+    // Initial call to update countdown
+    updateCountdown();
+
+    // Update the countdown every second
+    countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Cleanup the interval on unmount
+    return () => {
       clearInterval(countdownInterval);
-      return;
-    }
-
-    const days = Math.floor(remainingTimeMillis / (1000 * 3600 * 24));
-    const hours = Math.floor((remainingTimeMillis % (1000 * 3600 * 24)) / (1000 * 3600));
-    const minutes = Math.floor((remainingTimeMillis % (1000 * 3600)) / (1000 * 60));
-    const seconds = Math.floor((remainingTimeMillis % (1000 * 60)) / 1000);
-
-    setRemainingDays(days);
-    setRemainingHours(hours);
-    setRemainingMinutes(minutes);
-    setRemainingSeconds(seconds);
-  };
-
-  // Initial call to update countdown
-  updateCountdown();
-
-  // Update the countdown every second
-  const countdownInterval = setInterval(updateCountdown, 1000);
-
-  // Cleanup the interval on unmount
-  return () => {
-    clearInterval(countdownInterval);
-  };
-}, [expiryDate]);
+    };
+  }, [expiryDate]);
 
 console.log({ remainingDays }, { remainingHours }, { remainingMinutes }, { remainingSeconds });
 
@@ -61,7 +63,14 @@ console.log({ remainingDays }, { remainingHours }, { remainingMinutes }, { remai
         caption={user?.purchased_plan?.name || "N/A"}
       />
       <TopCard title={"User Name"} caption={user.name} />
-      <TopCard title={"Expires In"} caption={`${ remainingDays }:${ remainingHours }:${ remainingMinutes } :${ remainingSeconds }`} />
+      <TopCard
+        title={"Expires In"}
+        caption={
+          expired
+            ? "The token has expired."
+            : `${remainingDays}:${remainingHours}:${remainingMinutes}:${remainingSeconds}`
+        }
+      />
     </div>
   );
 };

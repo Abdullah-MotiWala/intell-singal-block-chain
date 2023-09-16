@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-const NetworkBanner = () => {
+const NetworkBanner = ({handleRoute}) => {
   return (
     // <div className='bg-gradient-to-b from-[#60efff] to-[#0061ff] w-full flex justify-center'>
     <div className="bg-gradient-to-b from-orange-400 to-red-500 w-full flex justify-center">
@@ -15,18 +15,9 @@ const NetworkBanner = () => {
           <h3 className="text-black text-xl">CIRCULATING HNT SUPPLY</h3>
           <h4 className="text-black text-3xl font-semibold">154,294,919</h4>
         </div>
-        <div className="py-3  ">
-          <Link
-            to="specialoffers"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-            onSetActive={this?.handleSetActive}
-            className="custom-button ml-auto bg-gray-800 text-white shadow-lg   hover:bg-sk1 transition duration-300 ease-in-out"
-          >
+        <div onClick={handleRoute} className=" py-3 custom-button ml-auto bg-gray-800 text-white shadow-lg   hover:bg-sk1 transition duration-300 ease-in-out">
+
             View Network Coverage
-          </Link>
         </div>
       </div>
     </div>

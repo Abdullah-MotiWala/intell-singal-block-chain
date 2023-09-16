@@ -1,6 +1,6 @@
 import React from "react";
 
-const FreeSignals = () => {
+const FreeSignals = ({handleRoute}) => {
   return (
     <div className="text-center bg-blue-600 p-10 mt-10 rounded-2xl shadow-lg mb-20">
       <p className="text-2xl lg:text-5xl md:text-3xl font-black text-white mb-10">
@@ -25,7 +25,7 @@ const FreeSignals = () => {
           <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-cyan-500 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
           <span className="relative text-white font-bold rounded-full transition duration-[700ms] group-hover:text-white ease">
             <div className="flex items-center">
-              <div class="bg-white p-1 rounded-full mr-4">
+              <div class="bg-white p-1 rounded-full mr-4" onClick={handleRoute}>
                 <img
                   src="/img/telegram.png"
                   alt="ScreenImage"

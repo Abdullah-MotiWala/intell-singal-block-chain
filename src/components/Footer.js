@@ -6,10 +6,24 @@ import { FiMail } from "react-icons/fi";
 import { BiUser } from "react-icons/bi";
 import { MdSubject } from "react-icons/md";
 import { AiOutlineMessage } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
  
 
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const { token } = useSelector((state) => state.user);
+  console.log(token, "token");
+  const handleRoute = (token) => {
+    if (token) {
+      navigate('/panel/dashboard')
+    }else{
+      navigate('/login')
+    }
+  };
+
+
   return (
     <footer
       id="footer"
@@ -245,17 +259,19 @@ const Footer = () => {
             alt="home"
             className="w-32 h-auto hover:scale-95 transition duration-300 ease-in-out"
           />
-          <ScrollLink
+          {/* <ScrollLink
             to="home"
             spy={true}
             smooth={true}
             offset={50}
             duration={500}
             onSetActive={this?.handleSetActive}
-            className="custom-button ml-auto lg:mr-28 bg-sk hover:bg-sk1 transition duration-200"
-          >
+            
+          > */}
+            <div className="custom-button ml-auto lg:mr-28 bg-sk hover:bg-sk1 transition duration-200" onClick={handleRoute}>
             <button type="submit">Subscribe Now</button>
-          </ScrollLink>
+            </div>
+          {/* </ScrollLink> */}
         </div>
       </div>
       <div className="flex flex-col items-center w-full  pt-8  pb-3 bg-gr2 gap-y-4 ">
