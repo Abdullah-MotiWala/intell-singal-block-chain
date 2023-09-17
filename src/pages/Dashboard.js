@@ -31,8 +31,8 @@ const Dashboard = () => {
           </Link>
         )}
         {String(user?.purchased_plan) &&
-          (user?.purchased_plan !== null ||
-            user?.purchased_plan === undefined) && (
+          (user?.purchased_plan !== null &&
+            user?.purchased_plan !== undefined) && (
             <a
               href={`${PACKAGE_LINKS[Number(user?.purchased_plan)]}`}
               target="_blank"
