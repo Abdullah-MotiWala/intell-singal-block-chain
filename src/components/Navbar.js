@@ -37,7 +37,7 @@ const Nav = () => {
 
       <div className="hidden ml-4  mr-2 xl:flex xl:gap-6 xl:items-end ">
         <div className="relative group cursor-pointer flex flex-col">
-          <span className="text-white font-semibold relative z-10 hover:text-red-500">
+          <span className="text-white font-normal text-sm relative z-10 hover:text-red-500">
             About Us
           </span>
           {/* <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div> */}
@@ -52,7 +52,7 @@ const Nav = () => {
                 onSetActive={this?.handleSetActive}
                 className="w-full"
               >
-                <span className="font-normal  relative z-10 hover:text-red-500">
+                <span className="font-normal text-sm  relative z-10 hover:text-red-500">
                   Who We Are
                 </span>
                 <div className="abssolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 hover:scale-x-100"></div>
@@ -69,22 +69,29 @@ const Nav = () => {
                 duration={500}
                 onSetActive={this?.handleSetActive}
               >
-                <span className="font-normal  relative z-10 hover:text-red-500">
-                  Why We Are
+                <span className="font-normal text-sm  relative z-10 hover:text-red-500">
+                  What We Are
                 </span>
                 <div className="abssolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 hover:scale-x-100"></div>
               </Link>
             </div>
           </div>
         </div>
-        <a activeClass="active" target="_blank" href="https://google.com">
+        <Link
+          to="staking"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+          onSetActive={this?.handleSetActive}
+        >
           <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+            <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
               Features
             </span>
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
           </div>
-        </a>
+        </Link>
         <Link
           to="specialoffers"
           spy={true}
@@ -94,7 +101,7 @@ const Nav = () => {
           onSetActive={this?.handleSetActive}
         >
           <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+            <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
               Subscription
             </span>
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
@@ -109,7 +116,7 @@ const Nav = () => {
           onSetActive={this?.handleSetActive}
         >
           <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+            <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
               INSIG Token
             </span>
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
@@ -124,7 +131,7 @@ const Nav = () => {
           onSetActive={this?.handleSetActive}
         >
           <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+            <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
               Join Our Socials
             </span>
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
@@ -133,7 +140,7 @@ const Nav = () => {
 
         <RouterLink to="INSIG">
           <div className="relative inline-block group cursor-pointer">
-            <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+            <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
               INSIG Game
             </span>
             <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
@@ -149,7 +156,7 @@ const Nav = () => {
         >
           <RouterLink to="Ai_Platform">
             <div className="relative inline-block group cursor-pointer">
-              <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+              <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
                 Ai Platform
               </span>
               <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
@@ -160,7 +167,7 @@ const Nav = () => {
         {!user && (
           <RouterLink to="login">
             <div className="relative inline-block group cursor-pointer">
-              <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+              <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
                 Login/Signup
               </span>
               <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
@@ -170,7 +177,7 @@ const Nav = () => {
         {user && (
           <RouterLink to="panel/dashboard">
             <div className="relative inline-block group cursor-pointer">
-              <span className="text-white font-semibold relative z-10 group-hover:text-red-500">
+              <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
                 Dashboard
               </span>
               <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>

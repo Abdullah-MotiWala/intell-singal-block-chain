@@ -11,6 +11,7 @@ export const userSlice = createSlice({
     },
     setPlan: (state, { payload: purchased_plan }) => {
       state.user.purchased_plan = purchased_plan;
+      state.user.purchased_at = new Date();
     },
     setUser: (state, { payload: { user } }) => {
       state.user = user;

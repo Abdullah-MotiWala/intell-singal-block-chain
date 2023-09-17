@@ -8,8 +8,6 @@ import { MdSubject } from "react-icons/md";
 import { AiOutlineMessage } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
- 
-
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -17,12 +15,11 @@ const Footer = () => {
   console.log(token, "token");
   const handleRoute = (token) => {
     if (token) {
-      navigate('/panel/dashboard')
-    }else{
-      navigate('/login')
+      navigate("/panel/dashboard");
+    } else {
+      navigate("/login");
     }
   };
-
 
   return (
     <footer
@@ -46,13 +43,13 @@ const Footer = () => {
               happy to help you.
             </p>
             <div className="flex gap-2">
-              <Link
-                to="/"
-                className="hover:text-green-400 flex transition duration-200 ease-in text-white "
+              <a
+                href="mailto:intellsignals.entertainment@gmail.com"
+                className="hover:text-green-400 cursor-pointer flex transition duration-200 ease-in text-white "
               >
                 <SiMinutemailer className="w-6 h-6 mr-2  text-green-400" />
                 intellsignals.entertainment@gmail.com
-              </Link>
+              </a>
             </div>
           </div>
           <form className="flex bg-gr2 flex-col hover:scale-105 transition duration-300 rounded-xl w-11/12 lg:w-1/2 gap-6 py-3 px-4">
@@ -105,38 +102,37 @@ const Footer = () => {
           <div className="col-span-1 flex flex-col gap-3">
             <h2 className="font-bold text-lg">Learn</h2>
             <ScrollLink
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-            onSetActive={this?.handleSetActive}
-          
-          >
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Home
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
-         </ScrollLink>
-         <ScrollLink
-                to="whatWeAre"
-                spy={true}
-                smooth={true}
-                offset={50}
-                duration={500}
-                onSetActive={this?.handleSetActive}
-                className="w-full">
-            
+            </ScrollLink>
+            <ScrollLink
+              to="whatWeAre"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
+              className="w-full"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   About Us
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
-              </ScrollLink>
-             
+            </ScrollLink>
+
             <Link to="service">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
@@ -268,9 +264,12 @@ const Footer = () => {
             onSetActive={this?.handleSetActive}
             
           > */}
-            <div className="custom-button ml-auto lg:mr-28 bg-sk hover:bg-sk1 transition duration-200" onClick={handleRoute}>
+          <div
+            className="custom-button ml-auto lg:mr-28 bg-sk hover:bg-sk1 transition duration-200"
+            onClick={handleRoute}
+          >
             <button type="submit">Subscribe Now</button>
-            </div>
+          </div>
           {/* </ScrollLink> */}
         </div>
       </div>

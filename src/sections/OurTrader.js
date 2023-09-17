@@ -1,6 +1,6 @@
 import React from "react";
 
-const OurTrader = () => {
+const OurTrader = ({ handleRoute }) => {
   return (
     <div className="flex justify-center items-center h-screen mt-24 mb-48 bg-black text-white">
       <div className="text-center bg-white p-10 mt-10">
@@ -39,7 +39,7 @@ const OurTrader = () => {
           </span>
         </button> */}
           <button
-            onClick={() => window.open("https://telegram.com")}
+            onClick={handleRoute}
             className="bg-blue-950 uppercase text-white  rounded-full px-6 py-4 font-bold"
           >
             join our free telegram

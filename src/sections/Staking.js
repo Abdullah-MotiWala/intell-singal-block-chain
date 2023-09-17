@@ -1,7 +1,12 @@
+import { Link } from "react-scroll";
+
 const Staking = () => {
   return (
     <>
-      <div className="flex flex-col  justify-between   items-center mt-5 lg:flex-row  w-full   min-h-screen">
+      <div
+        id="staking"
+        className="flex flex-col  justify-between   items-center mt-5 lg:flex-row  w-full   min-h-screen"
+      >
         <div className=" w-3/4 pt-7  lg:w-1/2  lg:pl-10   flex flex-col gap-4 justify-center">
           <h1 className="custom-main-heading  mb-4">
             <span className="text-white animate-pulse">STAKING</span>{" "}
@@ -17,15 +22,20 @@ const Staking = () => {
           </p>
 
           <div className="flex mt-5">
-            <button
-              onClick={() => window.open("https://google.com")}
+            <Link
+              to="service"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
               className="custom-button overflow-hidden relative group cursor-pointer bg-[#474DFF]  hover:scale-105 duration-[700ms]"
             >
               <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-yellow-400 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
               <span className="relative text-white transition duration-[700ms] group-hover:text-white ease">
                 Learn More
               </span>
-            </button>
+            </Link>
           </div>
         </div>
         <div className="w-2/3 flex justify-center lg:pl-6 lg:w-1/2 py-8  ">

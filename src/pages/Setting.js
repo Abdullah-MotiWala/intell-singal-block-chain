@@ -2,28 +2,32 @@ import React, { useEffect, useState } from "react";
 import { FiMail, FiUser } from "react-icons/fi";
 import { BsGlobe } from "react-icons/bs";
 import toast from "react-hot-toast";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { api } from "../utils/api";
+import { setUser } from "../store/user";
 
 const Setting = () => {
   const { user, token } = useSelector((state) => state.user);
-  console.log(user)
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const initialData = { email: "", name: "", country: "" };
   const [data, setData] = useState(initialData);
-  const [imageURL, setImageUrl] = useState("");
+  const [imageURL, setImageUrl] = useState(null);
   const handleSave = async () => {
     try {
       const payload = { name: data.name };
       if (data.country) payload.country = data.country;
-      alert(imageURL);
       if (imageURL) payload.profile_image = imageURL;
 
       const response = await api("update-profile", "PUT", payload, token);
       if (response.success) {
         toast.success("Profile Updated Successfull");
+        dispatch(
+          setUser({ user: { ...user, ...data, profile_image: imageURL } })
+        );
         navigate("/panel/dashboard");
       } else {
         toast.error(response.message);
@@ -37,32 +41,46 @@ const Setting = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
   const handleImageChange = async (event) => {
-    const image = event.target.files[0];
-    const formData = new FormData();
-    formData.append("file", image);
-    formData.append("upload_preset", "user-profile");
-    formData.append("cloud_name", process.env.REACT_APP_CLOUDINARY_CLOUD_NAME);
+    try {
+      setLoading(true);
+      const image = event.target.files[0];
+      const formData = new FormData();
+      formData.append("file", image);
+      formData.append("upload_preset", "user-profile");
+      formData.append(
+        "cloud_name",
+        process.env.REACT_APP_CLOUDINARY_CLOUD_NAME
+      );
 
-    const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,
-      {
-        method: "POST",
-        body: formData
-      }
-    );
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        {
+          method: "POST",
+          body: formData
+        }
+      );
 
-    const data = await response.json();
-    setImageUrl(data.secure_url);
+      const data = await response.json();
+      setImageUrl(data.secure_url);
+      if (data.secure_url) toast.success("Image Uploaded Successfully");
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      console.log(err.message);
+      toast.error(err.message);
+    }
   };
-
   useEffect(() => {
-    const userData = {
-      email: user.email,
-      name: user.name,
-      country: user.country
-    };
-    setImageUrl(user?.profile_image);
-    setData(userData);
+    if (user?.email) {
+      const tempUser = { ...user };
+      const userData = {
+        email: tempUser.email,
+        name: tempUser.name,
+        country: tempUser.country
+      };
+      setImageUrl(tempUser?.profile_image);
+      setData(userData);
+    }
   }, [user]);
   return (
     <div className="w-full p-4 ">
@@ -91,10 +109,11 @@ const Setting = () => {
               id="image"
               name="image"
               hidden
+              disabled={loading}
             />
             <label htmlFor="image">
               <div className="text-center cursor-pointer panel-primary-bg rounded-sm px-4 p-2 w-56 text-white font-bold hover:scale-105 transition-all duration-500">
-                Upload
+                {loading ? "Loading..." : "Upload"}
               </div>
             </label>
           </div>

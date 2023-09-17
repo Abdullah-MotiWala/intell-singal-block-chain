@@ -1,6 +1,6 @@
 import React from "react";
 
-const FreeSignals = ({handleRoute}) => {
+const FreeSignals = ({ handleRoute }) => {
   return (
     <div className="text-center bg-blue-600 p-10 mt-10 rounded-2xl shadow-lg mb-20">
       <p className="text-2xl lg:text-5xl md:text-3xl font-black text-white mb-10">
@@ -19,7 +19,7 @@ const FreeSignals = ({handleRoute}) => {
       </div>
       <div className="mt-10">
         <button
-          onClick={() => window.open("https://telegram.com")}
+          onClick={handleRoute}
           className="px-4 py-1 pr-10 overflow-hidden relative group cursor-pointer border-4 font-semibold text-[15px] border-white text-black  rounded-full  hover:scale-105 duration-[700ms]"
         >
           <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-cyan-500 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>

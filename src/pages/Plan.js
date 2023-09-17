@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import TopBar from "../components/shared/TopBar";
+import { useNavigate } from "react-router-dom";
 
 const Plan = () => {
   const [isDiscountPlan, setIsDisountPlan] = useState(true);
+  const navigate = useNavigate();
+  const navigateToWebsite = () => {
+    navigate("/");
+  };
   return (
     <div className="overflow-y-auto">
       <TopBar />
@@ -85,7 +90,10 @@ const Plan = () => {
                 </div>
               </div>
               <div className="mt-auto  flex justify-center">
-                <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300">
+                <button
+                  onClick={navigateToWebsite}
+                  className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+                >
                   Buy Now
                 </button>
               </div>
@@ -127,7 +135,10 @@ const Plan = () => {
                 </div>
               </div>
               <div className="mt-auto  flex justify-center">
-                <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300">
+                <button
+                  onClick={navigateToWebsite}
+                  className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+                >
                   Buy Now
                 </button>
               </div>
@@ -170,7 +181,10 @@ const Plan = () => {
                 </div>
               </div>
               <div className="mt-auto  flex justify-center">
-                <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300">
+                <button
+                  onClick={navigateToWebsite}
+                  className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+                >
                   Buy Now
                 </button>
               </div>
@@ -214,7 +228,10 @@ const Plan = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300">
+              <button
+                onClick={navigateToWebsite}
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+              >
                 Buy Now
               </button>
             </div>
@@ -253,7 +270,10 @@ const Plan = () => {
               </div>
             </div>
             <div className="mt-auto  flex justify-center">
-              <button className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300">
+              <button
+                onClick={navigateToWebsite}
+                className=" w-3/4 py-2 border-2 font-semibold text-white rounded-full hover:bg-gray-100 hover:text-[#102b59] transition duration-300"
+              >
                 Buy Now
               </button>
             </div>

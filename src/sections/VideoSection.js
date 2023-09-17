@@ -1,6 +1,6 @@
 import { FaRegLightbulb } from "react-icons/fa";
 
-const VideoSection = ({handleRoute}) => {
+const VideoSection = ({ handleRoute }) => {
   return (
     <div
       className="py-12 flex flex-col items-center w-full min-h-screen"
@@ -8,13 +8,23 @@ const VideoSection = ({handleRoute}) => {
     >
       <div className=" bg-gradient-to-r from-orange-400 to-red-500  w-2/3 rounded-t-lg flex justify-center">
         <div className="py-6 px-4 w-full flex justify-around items-center">
-          <button className=" rounded-full px-5 py-2 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-[#0061ff] text-black hover:scale-95 transition duration-300 ease-in-out ">
+          <button
+            onClick={handleRoute}
+            className=" rounded-full px-5 py-2 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-[#0061ff] text-black hover:scale-95 transition duration-300 ease-in-out "
+          >
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gray-800 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-white transition duration-[700ms] group-hover:text-white ease">
               INSIG TOKEN
             </span>
           </button>
-          <button className=" rounded-full px-5 py-2 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-green-500 text-black hover:scale-95 transition duration-300 ease-in-out ">
+          <button
+            onClick={() =>
+              window.open(
+                "https://intellsignals.com/wp-content/uploads/2023/05/whitepaper.pdf"
+              )
+            }
+            className=" rounded-full px-5 py-2 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-green-500 text-black hover:scale-95 transition duration-300 ease-in-out "
+          >
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gray-800 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-white transition duration-[700ms] group-hover:text-white ease">
               White Paper
@@ -59,20 +69,23 @@ const VideoSection = ({handleRoute}) => {
           </div>
           <div class="flex justify-center items-center">
             <button
-              onClick={() => window.open("https://telegram.com")}
+              onClick={handleRoute}
               className=" custom-button overflow-hidden relative group cursor-pointer border-2 font-semibold text-[15px] border-cyan-500 text-black hover:scale-105 duration-[700ms]"
             >
               <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-cyan-500 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
               <span className="relative text-cyan-500 transition duration-[700ms] group-hover:text-white ease">
                 <div className="flex items-center">
-                  <div class="bg-white p-1 rounded-full mr-4" onClick={handleRoute}>
+                  <div
+                    class="bg-white p-1 rounded-full mr-4"
+                    onClick={handleRoute}
+                  >
                     <img
                       src="/img/telegram.png"
                       alt="ScreenImage"
                       class="w-6 h-6"
                     />
                   </div>
-                  <span >Join our Telegram</span>
+                  <span>Join our Telegram</span>
                 </div>
               </span>
             </button>

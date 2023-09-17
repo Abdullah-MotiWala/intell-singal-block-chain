@@ -12,7 +12,6 @@ import allPlans, {
 
 const ActivePackage = () => {
   const { user } = useSelector((state) => state.user);
-  console.log(user);
   return (
     <div className="">
       {String(user?.purchased_plan) && <TopBar />}

@@ -20,7 +20,7 @@ const ForgetPassword = () => {
 
       const response = await api("get-forget-password", "PUT", data);
       if (response.success) {
-        toast.error(response.message);
+        toast.success(response.message);
         navigate("/");
       } else {
         toast.error(response.message);

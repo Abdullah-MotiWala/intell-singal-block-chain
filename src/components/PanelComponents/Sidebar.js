@@ -10,6 +10,7 @@ import { LiaHistorySolid } from "react-icons/lia";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken, signOut } from "../../store/user";
+import toast from "react-hot-toast";
 
 function Sidebar({ isOpen }) {
   const dispatch = useDispatch();
@@ -96,7 +97,13 @@ function Sidebar({ isOpen }) {
           <LiaHistorySolid className="mr-2 w-6 h-6" />
           <p>History</p>
         </NavLink>
-        <NavLink onClick={() => dispatch(signOut())} className={"custom-link"}>
+        <NavLink
+          onClick={() => {
+            dispatch(signOut());
+            toast.success("Logout Successfully");
+          }}
+          className={"custom-link"}
+        >
           <FiLogOut className="mr-2 w-6 h-6" />
           <p>Logout</p>
         </NavLink>

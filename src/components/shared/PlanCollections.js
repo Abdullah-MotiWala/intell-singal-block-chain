@@ -182,4 +182,11 @@ export const Plan5 = () => {
   </div>;
 };
 const allPlans = [Plan1, Plan2, Plan3, Plan4, Plan5];
+export const packageData = [
+  { expiredAt: 1, name: "Free" },
+  { expiredAt: 30, name: "Premium" },
+  { expiredAt: 30, name: "VIP" },
+  { expiredAt: 30, name: "Premium" },
+  { expiredAt: 30, name: "VIP" }
+];
 export default allPlans;

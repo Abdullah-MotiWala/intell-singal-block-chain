@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 
-const IntroductiontoAI = () => {
+const IntroductiontoAI = ({ handleRoute }) => {
   return (
     <div
       id="introToAI"
@@ -37,21 +37,15 @@ const IntroductiontoAI = () => {
           addressed.
         </p>
 
-        <Link
-          to="home"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-          onSetActive={this?.handleSetActive}
+        <button
+          onClick={handleRoute}
+          className="custom-button overflow-hidden relative group cursor-pointer border-2 font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-black "
         >
-          <button className="custom-button overflow-hidden relative group cursor-pointer border-2 font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-black ">
-            <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gray-700 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-            <span className="relative text-white transition duration-[700ms]  ease">
-              Use The Network
-            </span>
-          </button>
-        </Link>
+          <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gray-700 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+          <span className="relative text-white transition duration-[700ms]  ease">
+            Use The Network
+          </span>
+        </button>
       </div>
 
       <div className="pb-4 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7 -mt-16 mb-5">
