@@ -13,7 +13,7 @@ const FAQ = () => {
         "Intelligent Signals is an ecosystem that utilizes Artificial Intelligence (AI) and Visual Signalling Technology (VST) to analyze crypto charts and identify optimal market entry and exit points for trading cryptocurrencies. It includes the Intelligent Signals Token (INSIG) as the exclusive means of subscribing to the platform. The INSIG token also incorporates a crypto trading bot for automated trading."
     },
     {
-      question: "Why should i use Intelligent Signals?",
+      question: "Why should I use Intelligent Signals?",
       answer:
         "Intelligent Signals is designed to improve traders performance and consistency in decision-making. It offers an automated and intelligent approach to crypto selection and trading, allowing for 24/7 monitoring and execution of trades without manual intervention. With a 70% success rate, it provides traders with a more reliable and hands-free trading experience."
     },

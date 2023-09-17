@@ -44,7 +44,9 @@ const Login = () => {
       };
 
       if (isLogin) {
+        console.log("inner if")
         const response = await api("sign-in", "POST", data);
+        console.log(response,"response")
         if (response.success) {
           dispatch(setToken({ token: response.data.token }));
           dispatch(setUser(decodeToken(response.data.token)));
