@@ -20,7 +20,7 @@ const Login = () => {
       let email = e.target[1].value;
       let password = e.target[2].value;
       let confirmPassword = e.target[3]?.value;
-
+      localStorage.setItem('email' ,  email)
       let data = {
         name,
         email,
