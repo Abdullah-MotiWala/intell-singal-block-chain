@@ -16,6 +16,7 @@ import Setting from "./pages/Setting";
 import UnderDevelopment from "./pages/UnderDevelopment";
 import ActivePackage from "./pages/ActivePackage";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import OTP from "./pages/OTP"
 function App() {
   const currentPath = window.location.pathname;
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/otp" element={<OTP />} />
               <Route path="/forget-password/" element={<ForgetPassword />} />
 
               <Route path="/INSIG" element={<UnderDevelopment />} />
