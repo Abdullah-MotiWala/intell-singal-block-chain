@@ -15,7 +15,7 @@ const Blog = () => {
         fetchTweets()
     }, [blogs])
     return (
-        <div className='flex flex-col items-center mt-20  w-full   min-h-screen'
+        <div className='flex flex-col items-center mt-20  w-full  bg-gr min-h-screen'
         id='blog'
         >
             <h2 className='text-4xl py-4 font-semibold text-white'>Blogs</h2>

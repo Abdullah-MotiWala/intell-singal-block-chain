@@ -9,19 +9,15 @@ import { useNavigate } from "react-router-dom";
 import decodeToken from "jwt-decode";
 
 const OTP = () => {
-  const [otp, setOtp] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleChange = (e) => {
-    setOtp(e.target.value);
-  };
 
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
       const payload = {
         email: localStorage.getItem("email") || "",
-        otp
+        otp: e.target[0].value
       };
 
       const response = await api("verify-otp", "PUT", payload);
@@ -57,9 +53,8 @@ const OTP = () => {
                 className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="number"
                 placeholder="OTP *"
-                onChange={handleChange}
-                value={otp}
                 required
+                name="otp"
               />
             </div>
             <div>
