@@ -20,7 +20,7 @@ const Login = () => {
       let email = e.target[1].value;
       let password = e.target[2].value;
       let confirmPassword = e.target[3]?.value;
-      localStorage.setItem('email' ,  email)
+      localStorage.setItem("email", email);
       let data = {
         name,
         email,
@@ -46,9 +46,8 @@ const Login = () => {
         const response = await api("/sign-up", "POST", data);
         if (response.success) {
           toast.success("Sign Up Successfull");
-          dispatch(setToken({ token: response.data.token }));
-          dispatch(setUser(decodeToken(response.data.token)));
-          navigate("/panel/dashboard");
+          toast.success("OTP has been sent to registered email");
+          navigate("/otp");
         } else {
           toast.error(response.message);
         }

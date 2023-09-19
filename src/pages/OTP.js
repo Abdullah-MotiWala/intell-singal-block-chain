@@ -5,21 +5,23 @@ import { GoKey } from "react-icons/go";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { setToken, setUser } from "../store/user";
+import { useNavigate } from "react-router-dom";
+import decodeToken from "jwt-decode";
 
 const OTP = () => {
-
-  const [otp, setOtp] = useState('');
-  const dispatch = useDispatch()
+  const [otp, setOtp] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
-    setOtp(e.target.value)
-  }
+    setOtp(e.target.value);
+  };
 
   const loginHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const payload = {
-        email: localStorage.getItem('email') || '',
-        otp,
+        email: localStorage.getItem("email") || "",
+        otp
       };
 
       const response = await api("verify-otp", "PUT", payload);
@@ -27,7 +29,7 @@ const OTP = () => {
         toast.success("Verification Successfull");
         dispatch(setToken({ token: response?.data?.token }));
         dispatch(setUser(decodeToken(response?.data?.token)));
-        navigate("/");
+        navigate("/panel/dashboard");
       } else {
         toast.error(response.message);
       }
@@ -36,7 +38,6 @@ const OTP = () => {
       toast.error(err.message);
     }
   };
-
 
   return (
     <div className="bg-blue-950 w-full text-center">
