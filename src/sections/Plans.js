@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../utils/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlan, setUser } from "../store/user";
+import { ALL_PACKAGES } from "../utils/contants";
 
 const Plans = () => {
   const { user } = useSelector((state) => state.user);
@@ -229,7 +230,7 @@ const Plans = () => {
     >
       <h2 className="custom-mini-heading mb-3">Pricing</h2>
       <h3 className="custom-caption-text text-gray-700">
-        You can start with a free trial Or Buy the VIP Pakage
+        You can start with a free trial or buy the VIP Package
       </h3>
       <div className="w-full py-4 flex flex-col items-center">
         <h2 className="cursor-pointer custom-mini-sub-heading text-gray-800 opacity-100 hover:delay-500  hover:underline  hover:underline-offset-8  hover:decoration-2 transition-all duration-500">
@@ -238,31 +239,35 @@ const Plans = () => {
         <div className="flex py-6 flex-col items-center w-full md:flex-row md:items-stretch md:justify-center gap-8">
           <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in mx-6">
             <div className="flex flex-col  w-full  mx-6  ">
-              <p className="font-bold">Basic</p>
-              <h3 className="text-white text-4xl font-bold ">Free</h3>
+              <p className="font-bold">{ALL_PACKAGES[0].type}</p>
+              <h3 className="text-white text-4xl font-bold ">
+                {ALL_PACKAGES[0].price}
+              </h3>
             </div>
 
             <div className="flex flex-col mx-6 pb-2 ">
               <div className="border-b py-5">
-                <p className="text-white">The perfect solution to try out</p>
+                <p className="text-white">{ALL_PACKAGES[0].description}</p>
               </div>
               <div className="border-b py-5">
                 <div className="flex">
                   <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">1</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[0].numOfDays}
+                  </p>
                 </div>
                 <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
-                  <p className="text-white ml-auto font-bold">1</p>
+                  <p className="text-white ml-auto font-bold">
+                    {ALL_PACKAGES[0].numOfSignals}
+                  </p>
                 </div>
               </div>
               <div className="py-5">
                 <ul className="list-none list-outside text-white text-sm">
-                  <li>1 Free Signal per day</li>
-                  <li>
-                    Perfect for beginners and those looking to dip their toes
-                    into crypto trading.
-                  </li>
+                  {ALL_PACKAGES[0].features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -282,34 +287,36 @@ const Plans = () => {
 
           <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
             <div className="flex flex-col  w-full  mx-6  ">
-              <p className="font-bold">Premium / Month</p>
+              <p className="font-bold">{`${ALL_PACKAGES[1].type} / ${ALL_PACKAGES[1].name}`}</p>
               <div className="flex flex-row ">
-                <h3 className="text-white text-4xl font-bold ">$49 </h3>{" "}
+                <h3 className="text-white text-4xl font-bold ">
+                  {`$${ALL_PACKAGES[1].price}`}{" "}
+                </h3>{" "}
               </div>
             </div>
             <div className="flex flex-col mx-6 pb-2 ">
               <div className="border-b py-5">
-                <p className="text-white">The perfect solution to try out</p>
+                <p className="text-white">{ALL_PACKAGES[1].description}</p>
               </div>
               <div className="border-b py-5">
                 <div className="flex">
                   <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">30</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[1].numOfDays}
+                  </p>
                 </div>
                 <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
-                  <p className="text-white ml-auto font-bold">150</p>
+                  <p className="text-white ml-auto font-bold">
+                    {ALL_PACKAGES[1].numOfSignals}
+                  </p>
                 </div>
               </div>
               <div className="py-5">
                 <ul className="list-none list-outside text-white text-sm ">
-                  <li>5 Signals per day</li>
-                  <li>Access to Premium signals</li>
-                  <li>Opportunity to diversify your portfolio</li>
-                  <li>
-                    Ideal for traders seeking more signals and a competitive
-                    edge.
-                  </li>
+                  {ALL_PACKAGES[1].features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -329,35 +336,39 @@ const Plans = () => {
 
           <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
             <div className="flex flex-col  w-full  mx-6  ">
-              <p className="font-bold">VIP / Month</p>
+              <p className="font-bold">
+                {`${ALL_PACKAGES[2].price} / ${ALL_PACKAGES[2].name}`}
+              </p>
               <div className="flex flex-row ">
-                <h3 className="text-white text-4xl font-bold ">$99 </h3>{" "}
+                <h3 className="text-white text-4xl font-bold ">
+                  {`$${ALL_PACKAGES[2].price}`}
+                </h3>{" "}
               </div>
             </div>
 
             <div className="flex flex-col mx-6 pb-2 ">
               <div className="border-b py-5">
-                <p className="text-white">The perfect solution to try out</p>
+                <p className="text-white">${ALL_PACKAGES[2].description}</p>
               </div>
               <div className="border-b py-5">
                 <div className="flex">
                   <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">30</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[2].numOfDays}
+                  </p>
                 </div>
                 <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
-                  <p className="text-white ml-auto font-bold">Unlimited</p>
+                  <p className="text-white ml-auto font-bold">
+                    {ALL_PACKAGES[2].numOfSignals ?? "Unlimited"}
+                  </p>
                 </div>
               </div>
               <div className="pt-5">
                 <ul className="list-none list-outside text-white text-sm">
-                  <li>Unlimited Signals</li>
-                  <li>One-to-One Coaching (up to 1 hour)</li>
-                  <li>Custom Crypto Research Reports on Demand</li>
-                  <li>
-                    For serious traders wanting maximum insights, personalized
-                    guidance, and research expertise.
-                  </li>
+                  {ALL_PACKAGES[2].features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -388,40 +399,38 @@ const Plans = () => {
         </h2>
         <div className="flex py-6 flex-col items-center w-full md:flex-row md:items-stretch md:justify-center gap-8">
           <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
-            {/* <div className="flex w-full justify-center ">
-              <h3 className="text-white text-2xl font-bold ">
-                Premium: $129/3 Months
-              </h3>
-            </div> */}
             <div className="flex flex-col  w-full  mx-6  ">
-              <p className="font-bold">Premium / 3 Month</p>
+              <p className="font-bold">{`${ALL_PACKAGES[3].type} / ${ALL_PACKAGES[3].name}`}</p>
               <div className="flex flex-row ">
-                <h3 className="text-white text-4xl font-bold ">$129 </h3>{" "}
+                <h3 className="text-white text-4xl font-bold ">
+                  {`$${ALL_PACKAGES[3].price}`}
+                </h3>{" "}
               </div>
             </div>
 
             <div className="flex flex-col mx-6 pb-2 ">
               <div className="border-b py-5">
-                <p className="text-white">The perfect solution to try out</p>
+                <p className="text-white">{ALL_PACKAGES[3].description}</p>
               </div>
               <div className="border-b py-5">
                 <div className="flex">
                   <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">30</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[3].numOfDays}
+                  </p>
                 </div>
                 <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
-                  <p className="text-white ml-auto font-bold">150</p>
+                  <p className="text-white ml-auto font-bold">
+                    {ALL_PACKAGES[3].numOfSignals}
+                  </p>
                 </div>
               </div>
               <div className="py-5">
                 <ul className="list-none list-outside text-white text-sm">
-                  <li>All benefits of Monthly Premium package</li>
-                  <li>Discounted rate for 3 months</li>
-                  <li>
-                    A cost-effective choice for extended premium access and
-                    savings.
-                  </li>
+                  {ALL_PACKAGES[3].features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -440,34 +449,37 @@ const Plans = () => {
           </div>
           <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
             <div className="flex flex-col  w-full  mx-6  ">
-              <p className="font-bold">VIP / 3 Month</p>
+              <p className="font-bold">{`${ALL_PACKAGES[4].type} / ${ALL_PACKAGES[4].name}`}</p>
               <div className="flex flex-row ">
-                <h3 className="text-white text-4xl font-bold ">$249 </h3>{" "}
+                <h3 className="text-white text-4xl font-bold ">
+                  ${ALL_PACKAGES[4].price}{" "}
+                </h3>{" "}
               </div>
             </div>
 
             <div className="flex flex-col mx-6 pb-2 ">
               <div className="border-b py-5">
-                <p className="text-white">The perfect solution to try out</p>
+                <p className="text-white">{ALL_PACKAGES[4].description}</p>
               </div>
               <div className="border-b py-5">
                 <div className="flex">
                   <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">30</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[4].numOfDays}
+                  </p>
                 </div>
                 <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
-                  <p className="text-white ml-auto font-bold">Unlimited</p>
+                  <p className="text-white ml-auto font-bold">
+                    {ALL_PACKAGES[4].numOfSignals ?? "Unlimited"}
+                  </p>
                 </div>
               </div>
               <div className="py-5">
                 <ul className="list-none list-outside text-white text-sm ">
-                  <li>All benefits of Monthly VIP package</li>
-                  <li>Discounted rate for 3 months</li>
-                  <li>
-                    Premium features at a reduced rate for traders committed to
-                    growth.
-                  </li>
+                  {ALL_PACKAGES[4].features.map((feature) => (
+                    <li>{feature}</li>
+                  ))}
                 </ul>
               </div>
             </div>

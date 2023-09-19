@@ -35,11 +35,11 @@ const VideoSection = ({ handleRoute }) => {
       <div className="bg-[#686767] hover:bg-[#7f7e7e] rounded-b-3xl  px-10 overflow-x-auto py-6 w-2/3 flex flex-col  items-center hover:shadow-2xl hover:scale-105 transition-all cursor-pointer duration-500">
         <div className="pb-6 flex flex-col  gap-2">
           <h4 className="text-white md:font-semibold  text-lg md:text-3xl">
-            In this video you will learn{" "}
+            In this video, you will learn{" "}
           </h4>
           <div className="flex items-center">
             <h4 className="text-white md:font-semibold text-lg md:text-3xl">
-              How this website works{" "}
+              how this website works{" "}
             </h4>
             <FaRegLightbulb className="w-6 h-6 md:w-10 md:h-10 text-white hover:text-yellow-500 hover:animate-pulse" />
           </div>

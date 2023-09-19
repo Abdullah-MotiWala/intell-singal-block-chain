@@ -2,13 +2,8 @@ import React from "react";
 import TopBar from "../components/shared/TopBar";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import allPlans, {
-  Plan1,
-  Plan2,
-  Plan3,
-  Plan4,
-  Plan5
-} from "../components/shared/PlanCollections";
+import PlanCard from "../components/shared/PlanCard";
+import { ALL_PACKAGES } from "../utils/contants";
 
 const ActivePackage = () => {
   const { user } = useSelector((state) => state.user);
@@ -31,11 +26,10 @@ const ActivePackage = () => {
             </Link>
           </>
         )}
-        {user?.purchased_plan == 0 && <Plan1 />}
-        {user?.purchased_plan == 1 && <Plan2 />}
-        {user?.purchased_plan == 2 && <Plan3 />}
-        {user?.purchased_plan == 3 && <Plan4 />}
-        {user?.purchased_plan == 4 && <Plan5 />}
+        {user?.purchased_plan !== null &&
+          user?.purchased_plan !== undefined && (
+            <PlanCard selectedPackage={ALL_PACKAGES[user?.purchased_plan]} />
+          )}
       </div>
     </div>
   );

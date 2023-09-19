@@ -16,8 +16,8 @@ const LatestNews = () => {
             Network Scalability
           </h4>
           <h3 className="text-black mt-2 leading-7  font-semibold  font-mono">
-            Helium Network boosts speed and reliability with upgrade to Solana
-            Blockchain
+            IntellSignals Network boosts speed and reliability with upgrade to
+            Solana Blockchain
           </h3>
         </div>
         <div className="flex flex-col bg-gradient-to-t from-purple-500 to-purple-400  px-4 py-6 rounded-xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-200 ease-in">
@@ -26,7 +26,7 @@ const LatestNews = () => {
           </h4>
           <h3 className="text-black mt-2 leading-7  font-semibold font-mono">
             Mobile Carrier Nova Labs and T-Mobile Collaborate on Cryptocarrier,
-            Helium Mobile
+            IntellSignals Mobile
           </h3>
         </div>
         <div className="flex flex-col  bg-gradient-to-t from-blue-500 to-blue-400  px-4 py-6  rounded-xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-200 ease-in">
@@ -34,7 +34,7 @@ const LatestNews = () => {
             Coverage Integration
           </h4>
           <h3 className="text-black mt-2 leading-7  font-semibold font-mono">
-            Helium Connects Senet Customers in NYC
+            IntellSignals Connects Senet Customers in NYC
           </h3>
         </div>
         <div className="flex flex-col bg-gradient-to-t from-green-500 to-green-400  px-4 py-6  rounded-xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-200 ease-in">
@@ -42,7 +42,7 @@ const LatestNews = () => {
             Roaming Partner
           </h4>
           <h3 className="text-black mt-2 leading-7  font-semibold font-mono">
-            Actility and Helium Announce Roaming Integration
+            Actility and IntellSignals Announce Roaming Integration
           </h3>
         </div>
       </div>

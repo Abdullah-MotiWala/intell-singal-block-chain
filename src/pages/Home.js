@@ -49,13 +49,15 @@ const Home = () => {
             <MdArrowOutward className="w-8 h-8 py-1 cursor-pointer ml-auto  hover:text-blue-300" />
           </div>
           <h1 className="custom-mini-heading mb-3">
-            <span className="text-white">INSIGN </span>
+            <span className="text-white">INSIG </span>
             <span className="text-white">TOKEN.</span>{" "}
           </h1>
           <p className="custom-mini-sub-heading mb-3">Start Trading Now</p>
           <p className="custom-caption-text">
-            Lorem ipsum is placeholder text commonly used in the graphic, print,
-            and publishing industries for previewing layouts and visual mockups.
+            Welcome to the INSIG Ecosystem – your portal to intelligent crypto
+            trading. Explore AI-powered signals, an active crypto community, and
+            unlock the full potential of the INSIG Token for enhanced trading
+            experiences and beyond.
           </p>
           {/* <button className='mt-4 w-1/2 px-4 py-2 lg:mr-auto font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg hover:translate-y-1 hover:bg-sk1 transition duration-300 ease-in-out '>Start Now</button> */}
           <button className="w-1/2 mt-6 overflow-hidden relative group cursor-pointer  border-2 bg-gray-800 text-[15px] border-yellow-400 text-black hover:scale-105 duration-[700ms] custom-button">

@@ -15,10 +15,8 @@ const Staking = () => {
             Build the Future with Intell Signals
           </h2>
           <p className="custom-caption-text mb-5">
-            By deploying a Helium Hotspot in your home, office, or elsewhere in
-            the wild, you can provide your town with wireless network coverage
-            for low power “internet of things” or cellular devices and earn
-            Helium tokens.
+            Grow your crypto holdings with INSIG Staking – your path to passive
+            income in the world of crypto
           </p>
 
           <div className="flex mt-5">
