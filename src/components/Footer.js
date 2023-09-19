@@ -8,16 +8,40 @@ import { MdSubject } from "react-icons/md";
 import { AiOutlineMessage } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { api } from "../utils/api";
+import toast from "react-hot-toast";
 
 const Footer = () => {
+  const [contactForm, setContactForm] = useState({
+    fullName: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.user);
-  console.log(token, "token");
   const handleRoute = (token) => {
     if (token) {
       navigate("/panel/dashboard");
     } else {
       navigate("/login");
+    }
+  };
+
+  const formChangeHandler = (e) => {
+    setContactForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await api("contact-us", "POST", contactForm);
+      if (response.success) {
+        toast.success("Form Submitted Successfully");
+      }
+    } catch (err) {
+      toast.error(err.message);
     }
   };
 
@@ -54,7 +78,7 @@ const Footer = () => {
           </div>
           <form className="flex bg-gr2 flex-col hover:scale-105 transition duration-300 rounded-xl w-11/12 lg:w-1/2 gap-6 py-3 px-4">
             <h2 className=" text-gray-300 text-xl font-bold ">
-              Lets Get in touch with us
+              Get in touch with us!
             </h2>
             <div className="flex flex-col gap-y-5">
               <div className="flex relative items-center ">
@@ -63,6 +87,9 @@ const Footer = () => {
                   className="pl-12 rounded bg-gray-200 shadow-lg w-full  p-2 placeholder:text-gr1 "
                   type="text"
                   placeholder="Full name"
+                  name="fullName"
+                  value={contactForm.fullName}
+                  onChange={formChangeHandler}
                 />
               </div>
               <div className="flex relative items-center ">
@@ -71,6 +98,9 @@ const Footer = () => {
                   className="pl-12 w-full rounded bg-gray-200 shadow-lg   p-2 placeholder:text-gr1 "
                   type="email"
                   placeholder="Email Address"
+                  name="email"
+                  onChange={formChangeHandler}
+                  value={contactForm.email}
                 />
               </div>
               <div className="flex relative items-center">
@@ -79,6 +109,9 @@ const Footer = () => {
                   className="pl-12 w-full rounded bg-gray-200 shadow-lg  p-2 placeholder:text-gr1 "
                   type="text"
                   placeholder="Enter Your Subject"
+                  name="subject"
+                  onChange={formChangeHandler}
+                  value={contactForm.subject}
                 />
               </div>
               <div className="flex relative items-center">
@@ -86,10 +119,13 @@ const Footer = () => {
                 <textarea
                   className="pl-12 w-full p-2 rounded bg-gray-200  shadow-lg   placeholder:text-gr1 "
                   placeholder="Message"
+                  name="message"
+                  onChange={formChangeHandler}
+                  value={contactForm.message}
                 ></textarea>
               </div>
               <button
-                type="submit"
+                onClick={handleSendMessage}
                 className="text-white px-4 py-2 rounded-lg bg-sk hover:bg-sk1 transition duration-200"
               >
                 Send Message
@@ -215,7 +251,7 @@ const Footer = () => {
 
           <div className="col-span-1 flex flex-col gap-3">
             <h2 className="font-bold text-lg">Social Links</h2>
-            <a href="https://facebook.com" target="_blank">
+            <a href="https://www.facebook.com/profile.php?id=100092186089195&mibextid=ZbWKwL" target="_blank">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Facebook
@@ -223,7 +259,15 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </a>
-            <a href="https://instagram.com" target="_blank">
+            <a href="https://youtube.com/@INTELLSIG?si=7z-ItYEHqAqh0SAp" target="_blank">
+              <div className="relative inline-block group">
+                <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
+                  Youtube
+                </span>
+                <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
+              </div>
+            </a>
+            <a href="https://instagram.com/intellsignals" target="_blank">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Instagram
@@ -231,7 +275,7 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </a>
-            <a href="https://twitter.com" target="_blank">
+            <a href="https://t.me/IntellSignal" target="_blank">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Twitter
@@ -239,7 +283,7 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </a>
-            <a href="https://linkedin.com" target="_blank">
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7080135501327863809" target="_blank">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Linkedin

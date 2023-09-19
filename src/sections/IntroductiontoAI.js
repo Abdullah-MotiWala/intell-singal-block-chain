@@ -51,30 +51,27 @@ const IntroductiontoAI = ({ handleRoute }) => {
       <div className="pb-4 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7 -mt-16 mb-5">
         <div className="flex flex-col bg-gradient-to-b from-green-200 to-green-300 shadow p-8 rounded-lg w-3/4 md:w-1/3 gap-6 hover:scale-105 transition duration-300">
           <h3 className="text-gray-900 text-xl font-bold">
-            AN OPEN ALTERNATIVE
+            Pattern Recognition Technology
           </h3>
           <p className="text-gray-700">
-            The People's Network is built on Open Source technology and governed
-            by its worldwide community with stewardship from the Helium
-            Foundation.
+            By identifying patterns early, Intelligent Signals platform employs
+            AI and Machine Learning (ML) to analyse over 23,000 crypto charts
+            and identify patterns.
           </p>
         </div>
         <div className=" flex flex-col  bg-gradient-to-b from-blue-200 to-blue-300 shadow p-8 rounded-lg w-3/4 md:w-1/3 gap-6 hover:scale-105 transition duration-300">
-          <h3 className="text-gray-900 text-xl font-bold">
-            SCALABLE & AFFORDABLE
-          </h3>
+          <h3 className="text-gray-900 text-xl font-bold">70% success rate</h3>
           <p className="text-gray-700">
-            Say goodbye to expensive cell contracts. On Helium a sensor can cost
-            cents to run a year.
+            Intelligent Signals platform boasts a 70% success rate. It uses a
+            pattern recognition algorithm with a 70% accuracy rate and GANN
+            technical analysis.
           </p>
         </div>
         <div className="flex flex-col bg-gradient-to-b from-purple-200 to-purple-300 shadow p-8 rounded-lg w-3/4 md:w-1/3 gap-6 hover:scale-105 transition duration-300">
-          <h3 className="text-gray-900 text-xl font-bold">
-            LORAWAN-COMPATIBLE
-          </h3>
+          <h3 className="text-gray-900 text-xl font-bold">VST</h3>
           <p className="text-gray-700">
-            Utilize thousands of existing sensors, chipsets and MCUs for
-            streamlined development.
+            VST system utilises technical analysis techniques to analyse crypto
+            charts for trading cryptocurrencies.
           </p>
         </div>
       </div>

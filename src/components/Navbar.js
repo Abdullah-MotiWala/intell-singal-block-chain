@@ -28,7 +28,7 @@ const Nav = () => {
   }, [search]);
 
   return (
-    <nav className="w-full  fixed bg-gr opacity-90 p-3 flex  border-b border-gr2 z-20 ">
+    <nav className="w-full fixed bg-gr  p-3 flex  border-b border-gr2 z-20 ">
       <div className="ml-2 mr-4 hover:scale-95 transition duration-300 ease-in-out">
         <Link to="/">
           <img src="/img/home-1.png" alt="DP" className="w-28 h-auto" />
