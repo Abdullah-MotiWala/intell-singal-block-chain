@@ -20,6 +20,7 @@ import InfoBox from "../sections/InfoBox";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Navbars from "../components/Navbars";
 import Footer from "../components/Footer";
 
 const Home = () => {

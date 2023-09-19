@@ -12,8 +12,8 @@ const WhatAreInsig = () => {
           alt="a"
         />
       </div>
-      <div className=" w-3/4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center">
-        <h1 className="mb-3 custom-mini-heading text-white leading-[4rem]">
+      <div className=" lg:w-3/4 md:w-3/4 w-full px:4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center">
+        <h1 className="mb-3 text-5xl text-white leading-[4rem]">
           What are Intelligent{" "}
           <span className="text-orange-400 animate-pulse  ">Signals?</span>
         </h1>

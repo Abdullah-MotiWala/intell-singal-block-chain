@@ -315,7 +315,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="py-10 pl-2 w-full text-white flex items-center ">
+        <div className="py-10 pl-2 w-full text-white flex flex-wrap items-center ">
           <img
             src="/img/home-1.png"
             alt="home"

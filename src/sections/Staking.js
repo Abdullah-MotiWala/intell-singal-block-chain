@@ -8,7 +8,7 @@ const Staking = () => {
         className="flex flex-col justify-between items-center mt-5 lg:flex-row w-full min-h-screen"
       >
         <div className=" w-3/4 pt-7  lg:w-1/2  lg:pl-10   flex flex-col gap-4 justify-center">
-          <h1 className="custom-main-heading  mb-4">
+          <h1 className="text-5xl  mb-4">
             <span className="text-white animate-pulse">STAKING</span>{" "}
           </h1>
           <h2 className="custom-sub-heading mb-7">

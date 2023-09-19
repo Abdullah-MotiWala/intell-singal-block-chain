@@ -16,7 +16,7 @@ const FaqCard = ({
       onMouseEnter={() => handleSetIndex(i)}
     >
       <div className="flex justify-between items-center my-3  px-4 sm:px-8 h-10 cursor-pointer">
-        <h3 className="text-xl pb-2 text-black font-semibold">{question}</h3>
+        <h3 className="lg:text-xl md:text-xl sm:text-xl text-xs  pb-2 text-black font-semibold">{question}</h3>
         <div className="text-3xl group-hover:rotate-180 transition duration-1500 ml-auto">
           {/* Right Icon */}
           <BiSolidChevronDown className="w-8 h-8  border-2 rounded-full text-green-500 border-green-500  group-hover:border-yellow-400 group-hover:text-yellow-400 " />
