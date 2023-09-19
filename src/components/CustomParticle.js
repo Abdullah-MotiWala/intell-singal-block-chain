@@ -18,6 +18,15 @@ const CustomParticle = () => {
         },
         fpsLimit: 60,
         particles: {
+          move: {
+            direction: "none",
+            enable: true,
+            outModes: {
+              default: "bounce"
+            },
+            speed: 1,
+            straight: true
+          },
           links: {
             color: "#ffffff",
             distance: 250,

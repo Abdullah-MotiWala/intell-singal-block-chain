@@ -2,9 +2,9 @@ const WhatAreInsig = () => {
   return (
     <div
       id="whatWeAre"
-      className="flex flex-col  items-center mt-10 lg:flex-row  w-full  max-w-6xl min-h-screen"
+      className="flex flex-col bg-gr items-center w-full pt-10 lg:flex-row "
     >
-      <div className="w-2/3 flex justify-center lg:w-1/2 py-8 lg:pl-8">
+      <div className=" w-full  max-w-6xl min-h-screen flex justify-center lg:w-1/2 py-8 lg:pl-8">
         <img
           className="w-auto h-auto rounded-xl hover:scale-95 transition duration-300 ease-in-out"
           loading="lazy"

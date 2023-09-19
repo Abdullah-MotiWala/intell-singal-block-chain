@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <div className="bg-blue-950 w-full text-center" id="login">
       <CustomParticle />
-      <div className="w-full my-24 flex justify-center">
+      <div className="w-full h-screen flex justify-center items-center">
         <form
           onSubmit={loginHandler}
           className="z-10 bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-20 py-12"
