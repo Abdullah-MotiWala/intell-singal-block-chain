@@ -115,7 +115,7 @@ const WhyUseInsig = () => {
 
   return (
     <div
-      className="flex flex-col pb-24 items-center px-4 py-12 bg-cover rounded w-full"
+      className="flex flex-col mb-24 items-center px-4 py-12 bg-cover rounded w-full"
       style={{ backgroundImage: "url('/img/b2.jpg')" }}
       id="about"
     >

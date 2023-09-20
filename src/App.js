@@ -22,7 +22,7 @@ function App() {
     <>
       <BrowserRouter>
         <div>
-          <main className="w-full flex flex-col items-center relative">
+          <main className="w-full flex flex-col items-center bg-gr">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<Blog />} />
