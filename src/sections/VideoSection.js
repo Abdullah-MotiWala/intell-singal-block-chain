@@ -3,7 +3,7 @@ import { FaRegLightbulb } from "react-icons/fa";
 const VideoSection = ({ handleRoute }) => {
   return (
     <div
-      className="py-12 flex flex-col items-center w-full bg-gr min-h-screen"
+      className="py-12 flex flex-col items-center w-full min-h-screen"
       id="service"
     >
       <div className=" bg-gradient-to-r from-orange-400 to-red-500  w-2/3 rounded-t-lg flex justify-center">

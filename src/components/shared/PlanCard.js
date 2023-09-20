@@ -1,12 +1,21 @@
 import React from "react";
 
-const PlanCard = ({ handleClick, selectedPackage, loading }) => {
+const PlanCard = ({
+  handleClick,
+  selectedPackage,
+  loading,
+  isPurchased = false
+}) => {
   return (
-    <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in mx-6">
+    <div
+      className={`relative py-4 flex flex-col bg-gradient-to-r ${
+        !isPurchased && "w-3/4 md:w-1/3"
+      } from-orange-400 to-red-500  rounded-xl shadow-2xl opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in mx-6`}
+    >
       <div className="flex flex-col  w-full  mx-6  ">
         <p className="font-bold">{selectedPackage.type}</p>
         <h3 className="text-white text-4xl font-bold ">
-          {selectedPackage.price}
+          {selectedPackage.price ? `$${selectedPackage.price}` : "Free"}
         </h3>
       </div>
 

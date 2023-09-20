@@ -19,6 +19,7 @@ const Footer = () => {
     subject: "",
     message: ""
   });
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { token } = useSelector((state) => state.user);
   const handleRoute = (token) => {
@@ -35,13 +36,24 @@ const Footer = () => {
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await api("contact-us", "POST", contactForm);
       if (response.success) {
         toast.success("Form Submitted Successfully");
+        setContactForm({
+          fullName: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        toast.error(response.message);
       }
+      setLoading(false);
     } catch (err) {
       toast.error(err.message);
+      setLoading(false);
     }
   };
 
@@ -127,8 +139,9 @@ const Footer = () => {
               <button
                 onClick={handleSendMessage}
                 className="text-white px-4 py-2 rounded-lg bg-sk hover:bg-sk1 transition duration-200"
+                disabled={loading}
               >
-                Send Message
+                {loading ? "Loading..." : "Send Message"}
               </button>
             </div>
           </form>
@@ -251,7 +264,10 @@ const Footer = () => {
 
           <div className="col-span-1 flex flex-col gap-3">
             <h2 className="font-bold text-lg">Social Links</h2>
-            <a href="https://www.facebook.com/profile.php?id=100092186089195&mibextid=ZbWKwL" target="_blank">
+            <a
+              href="https://www.facebook.com/profile.php?id=100092186089195&mibextid=ZbWKwL"
+              target="_blank"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Facebook
@@ -259,7 +275,10 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </a>
-            <a href="https://youtube.com/@INTELLSIG?si=7z-ItYEHqAqh0SAp" target="_blank">
+            <a
+              href="https://youtube.com/@INTELLSIG?si=7z-ItYEHqAqh0SAp"
+              target="_blank"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Youtube
@@ -283,7 +302,10 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </a>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7080135501327863809" target="_blank">
+            <a
+              href="https://www.linkedin.com/feed/update/urn:li:activity:7080135501327863809"
+              target="_blank"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Linkedin

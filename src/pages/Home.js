@@ -37,7 +37,7 @@ const Home = () => {
     <>
       <Navbar />
       <div
-        className="flex bg-gr flex-col items-center pb-4 lg:flex-row w-full  min-h-screen"
+        className="flex flex-col items-center mt-20 mb-4 lg:flex-row w-full min-h-screen"
         id="home"
       >
         <div className=" w-3/4 lg:w-1/2  lg:pl-32  bg-gr flex flex-col gap-4 justify-center items-center lg:items-stretch">
@@ -98,7 +98,7 @@ const Home = () => {
       <WhatAreInsig />
       <FreeSignals handleRoute={handleRoute} />
       <WhyUseInsig />
-      <LatestNews />
+      {/* <LatestNews /> */}
       <Staking />
       {/* <Tokenomics/> */}
       <IntroductiontoAI handleRoute={handleRoute} />
@@ -107,7 +107,7 @@ const Home = () => {
 
       <IntelligentSignalEcosystem />
       <DemandAppBanner handleRoute={handleRoute} />
-      <FoundingPartners />
+      {/* <FoundingPartners /> */}
       <FAQ />
 
       <Footer />
