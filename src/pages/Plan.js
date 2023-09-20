@@ -221,7 +221,7 @@ const Plan = () => {
   };
 
   return (
-    <div className="overflow-y-auto">
+    <div className="">
       <TopBar />
       <div className="flex  items-center justify-center mt-6 mb-2">
         <div
@@ -433,7 +433,7 @@ const Plan = () => {
               <p className="font-bold">{`${ALL_PACKAGES[3].type} / ${ALL_PACKAGES[3].name}`}</p>
               <div className="flex flex-row ">
                 <h3 className="text-white text-4xl font-bold ">
-                  {`${ALL_PACKAGES[3].price}`}
+                  {`$${ALL_PACKAGES[3].price}`}
                 </h3>{" "}
               </div>
             </div>

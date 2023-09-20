@@ -19,7 +19,7 @@ const ActivePackage = () => {
               No Plan Found
             </h1>
             <Link
-              to={"/"}
+              to={"/panel/plan"}
               className="button panel-primary-bg rounded-xl text-white font-bold p-4"
             >
               Buy Plan
@@ -28,7 +28,10 @@ const ActivePackage = () => {
         )}
         {user?.purchased_plan !== null &&
           user?.purchased_plan !== undefined && (
-            <PlanCard selectedPackage={ALL_PACKAGES[user?.purchased_plan]} />
+            <PlanCard
+              selectedPackage={ALL_PACKAGES[user?.purchased_plan]}
+              isPurchased={true}
+            />
           )}
       </div>
     </div>

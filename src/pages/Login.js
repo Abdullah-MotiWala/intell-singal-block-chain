@@ -1,17 +1,32 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import CustomParticle from "../components/CustomParticle";
 import { api } from "../utils/api";
 import { FiMail, FiLock, FiUser } from "react-icons/fi";
+import {
+  AiOutlineArrowLeft,
+  AiOutlineEye,
+  AiOutlineEyeInvisible
+} from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { setToken, setUser } from "../store/user";
 import { toast } from "react-hot-toast";
 import decodeToken from "jwt-decode";
 
 const Login = () => {
+  const location = useLocation();
+  const isSignUp = location?.state?.signup;
   const [isLogin, setIsLogin] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isSignUp) {
+      setIsLogin(false);
+    }
+  }, [location]);
 
   const loginHandler = async (e) => {
     try {
@@ -35,6 +50,12 @@ const Login = () => {
           dispatch(setUser(decodeToken(response.data.token)));
           toast.success("Login Successfull");
           navigate("/panel/dashboard");
+        }
+        // if response is not success and token found in api, indicate user is registered but not verified
+        else if (!response.success && response.data.token) {
+          toast.error(response.message);
+          localStorage.setItem("email", email);
+          navigate("/otp");
         } else {
           toast.error(response.message);
         }
@@ -68,9 +89,14 @@ const Login = () => {
           onSubmit={loginHandler}
           className="z-10 bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-20 py-12"
         >
-          <h2 className="text-gray-700 text-4xl font-medium my-4">
-            {isLogin ? "Login" : "Register"}
-          </h2>
+          <div className="w-full relative">
+            <Link to={"/"}>
+              <AiOutlineArrowLeft className="w-6 absolute left-1 h-6 top-6 text-gray-500  cursor-pointer hover:scale-110 hover:panel-primary-text transition-all duration-700" />
+            </Link>
+            <h2 className="text-gray-700 text-4xl font-medium my-4 ">
+              {isLogin ? "Login" : "Register"}
+            </h2>
+          </div>
           <div className="flex flex-col gap-y-5 h-full justify-between">
             <div className="flex relative items-center ">
               <FiUser className="absolute left-1  w-7 h-7 ml-2 p-1 text-gray-500" />
@@ -94,10 +120,22 @@ const Login = () => {
               <FiLock className=" absolute left-1 w-6 h-6 ml-2 text-gray-500" />
               <input
                 className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
-                type="password"
+                type={`${showPassword ? "text" : "password"}`}
                 placeholder="Password *"
                 required
               />
+              {showPassword && (
+                <AiOutlineEye
+                  onClick={() => setShowPassword(false)}
+                  className="absolute right-1 w-6 h-6 mr-2 text-gray-500 cursor-pointer"
+                />
+              )}
+              {!showPassword && (
+                <AiOutlineEyeInvisible
+                  onClick={() => setShowPassword(true)}
+                  className="absolute right-1 w-6 h-6 mr-2 text-gray-500 cursor-pointer"
+                />
+              )}
             </div>
             <div className="flex relative items-center">
               {!isLogin && (
@@ -105,10 +143,22 @@ const Login = () => {
                   <FiLock className=" absolute left-1 w-6 h-6 ml-2 text-gray-500" />
                   <input
                     className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
-                    type="password"
+                    type={`${showConfirmPassword ? "text" : "password"}`}
                     placeholder="Confirm Password *"
                     required
                   />
+                  {showConfirmPassword && (
+                    <AiOutlineEye
+                      onClick={() => setShowConfirmPassword(false)}
+                      className="absolute right-1 w-6 h-6 mr-2 text-gray-500 cursor-pointer"
+                    />
+                  )}
+                  {!showConfirmPassword && (
+                    <AiOutlineEyeInvisible
+                      onClick={() => setShowConfirmPassword(true)}
+                      className="absolute right-1 w-6 h-6 mr-2 text-gray-500 cursor-pointer"
+                    />
+                  )}
                 </>
               )}
             </div>
