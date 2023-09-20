@@ -24,15 +24,15 @@ const Dashboard = () => {
         {(user?.purchased_plan === null ||
           user?.purchased_plan === undefined) && (
           <Link
-            to={"/"}
+            to={"/panel/plan"}
             className="button panel-primary-bg rounded-xl text-white font-bold p-4"
           >
             Buy Plan
           </Link>
         )}
         {String(user?.purchased_plan) &&
-          (user?.purchased_plan !== null &&
-            user?.purchased_plan !== undefined) && (
+          user?.purchased_plan !== null &&
+          user?.purchased_plan !== undefined && (
             <a
               href={`${PACKAGE_LINKS[Number(user?.purchased_plan)]}`}
               target="_blank"

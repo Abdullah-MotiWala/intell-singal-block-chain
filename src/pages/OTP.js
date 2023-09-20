@@ -18,7 +18,7 @@ const OTP = () => {
     try {
       const payload = {
         email: localStorage.getItem("email") || "",
-        otp: e.target[0].value
+        otp: e.target[2].value
       };
 
       const response = await api("verify-otp", "PUT", payload);
