@@ -98,7 +98,7 @@ const Home = () => {
       <WhatAreInsig />
       <FreeSignals handleRoute={handleRoute} />
       <WhyUseInsig />
-      <LatestNews />
+      {/* <LatestNews /> */}
       <Staking />
       {/* <Tokenomics/> */}
       <IntroductiontoAI handleRoute={handleRoute} />
@@ -107,7 +107,7 @@ const Home = () => {
 
       <IntelligentSignalEcosystem />
       <DemandAppBanner handleRoute={handleRoute} />
-      <FoundingPartners />
+      {/* <FoundingPartners /> */}
       <FAQ />
 
       <Footer />
