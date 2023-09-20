@@ -28,7 +28,10 @@ const ActivePackage = () => {
         )}
         {user?.purchased_plan !== null &&
           user?.purchased_plan !== undefined && (
-            <PlanCard selectedPackage={ALL_PACKAGES[user?.purchased_plan]} />
+            <PlanCard
+              selectedPackage={ALL_PACKAGES[user?.purchased_plan]}
+              isPurchased={true}
+            />
           )}
       </div>
     </div>

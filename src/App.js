@@ -16,9 +16,8 @@ import Setting from "./pages/Setting";
 import UnderDevelopment from "./pages/UnderDevelopment";
 import ActivePackage from "./pages/ActivePackage";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import OTP from "./pages/OTP"
+import OTP from "./pages/OTP";
 function App() {
-  const currentPath = window.location.pathname;
   return (
     <>
       <BrowserRouter>

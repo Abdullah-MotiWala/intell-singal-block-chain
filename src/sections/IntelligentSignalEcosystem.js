@@ -13,7 +13,6 @@ const IntelligentSignalEcosystem = () => {
       {/* <ParticlesBackground /> */}
       {/* <div className="-z-10"> */}
       {/* </div> */}
-      {/* <CustomParticle /> */}
       <div className="flex flex-col lg:flex-row w-full max-w-7xl lg:items-stretch items-center py-8">
         <div className="flex lg:w-1/2 w-4/5 p-2 flex-col items-center justify-center">
           <img className="w-auto h-auto" src="/img/com.png" alt="a" />

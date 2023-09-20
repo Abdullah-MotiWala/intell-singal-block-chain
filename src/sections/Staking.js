@@ -5,7 +5,7 @@ const Staking = () => {
     <>
       <div
         id="staking"
-        className="flex flex-col  justify-between   items-center mt-5 lg:flex-row  w-full   min-h-screen"
+        className="flex flex-col justify-between items-center mt-5 lg:flex-row w-full min-h-screen"
       >
         <div className=" w-3/4 pt-7  lg:w-1/2  lg:pl-10   flex flex-col gap-4 justify-center">
           <h1 className="custom-main-heading  mb-4">
@@ -44,7 +44,7 @@ const Staking = () => {
           />
         </div>
       </div>
-      <div className="py-10 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7">
+      {/* <div className="py-10 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7">
         <div className="flex flex-col shadow-lg shadow-gray-100  bg-gr1 p-8 rounded-lg w-3/4 md:w-1/3 gap-6 hover:scale-105 transition duration-200 ease-in">
           <h3 className="text-gray-100 text-2xl font-semibold">
             BYE BYE GPU MINING
@@ -71,7 +71,7 @@ const Staking = () => {
             Hotspots are built by a variety of vendors to suit your needs.
           </p>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
