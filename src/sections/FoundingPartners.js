@@ -5,7 +5,7 @@ const FoundingPartners = () => {
       id="about"
     >
       <div className="px-4 w-11/12 flex flex-col items-center gap-5">
-        <h2 className="custom-mini-heading text-orange-400 mb-3">
+        <h2 className="lg:text-5xl md:text-5xl sm:text-5xl text-2xl font-semibold lg:-tracking-[4px] md:-tracking-[2px] text-orange-400 mb-3">
           Founding Partners
         </h2>
         <h3 className="custom-caption-text text-gray-800 text-center mb-3">

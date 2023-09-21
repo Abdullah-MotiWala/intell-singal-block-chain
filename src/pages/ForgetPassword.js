@@ -36,7 +36,7 @@ const ForgetPassword = () => {
       <div className=" w-full my-24 flex justify-center">
         <form
           onSubmit={forgetPasswordHandler}
-          className="z-10 bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-20 py-12"
+          className="z-10 bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-3 lg:px-20 py-12"
         >
           <h2 className="text-gray-700 text-4xl font-medium my-4">
             {"Forget Password"}
@@ -45,7 +45,7 @@ const ForgetPassword = () => {
             <div className="flex relative items-center ">
               <FiUser className="absolute left-1  w-7 h-7 ml-2 p-1 text-gray-500" />
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="text"
                 placeholder="User Name *"
                 required
@@ -54,7 +54,7 @@ const ForgetPassword = () => {
             <div className="flex relative items-center ">
               <FiMail className="absolute left-1  w-7 h-7 ml-2 p-1 text-gray-500" />
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="text"
                 placeholder="Email Address*"
                 required

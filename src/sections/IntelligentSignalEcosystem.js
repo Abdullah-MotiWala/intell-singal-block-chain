@@ -1,10 +1,5 @@
-// import Particles from "react-tsparticles";
-// import particlesConfig from "../config/particles.config";
-import CustomParticle from "../components/CustomParticle";
-import ParticlesBackground from "./ParticlesBackground";
 const IntelligentSignalEcosystem = () => {
   return (
-    // <ParticlesBackground>
     <div
       className="min-h-screen bg-cover w-full flex justify-center "
       id="performance"
@@ -18,7 +13,7 @@ const IntelligentSignalEcosystem = () => {
           <img className="w-auto h-auto" src="/img/com.png" alt="a" />
         </div>
         <div className="flex lg:w-1/2 w-4/5 p-5 mt-3 lg:-mt-0   flex-col rounded-xl bg-black bg-opacity-40 hover:bg-opacity-50  gap-8">
-          <h2 className="custom-mini-heading mb-3">
+          <h2 className="lg:-tracking-[4px] md:-tracking-[4px] font-semibold lg:text-5xl md:text-5xl sm:text-5xl text-3xl mb-3">
             <span className="text-orange-400">Intelligent Signal </span>
             <span className="text-red-500">Ecosystem</span>{" "}
           </h2>

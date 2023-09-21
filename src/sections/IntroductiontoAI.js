@@ -6,18 +6,20 @@ const IntroductiontoAI = ({ handleRoute }) => {
       id="introToAI"
       className="  bg-white min-h-screen w-full flex flex-col items-center "
     >
-      <img className=" w-full h-full" src="/img/b4.jpg" alt="b4" />
-      <div className="relative -top-36 w-4/5 bg-opacity-0 flex flex-col items-center gap-4">
+    <div className="w-full h-full">
+    <img className="  object-fit" src="/img/b4.jpg" alt="b4" />
+    </div>
+      <div className=" w-4/5 bg-blue-400 bg-opacity-0 flex flex-col items-center gap-4 mb-20">
         <h2 className="custom-sub-heading text-center mb-3">
           Introduction to <span className="text-red-400">AI </span> and{" "}
           <span className="text-orange-400">ML </span> with Application and
           Future
         </h2>
-        <h3 className="custom-mini-sub-heading opacity-100 font-semibold text-green-400 mb-3">
+        <h3 className="custom-mini-sub-heading lg:text-3xl md:text-xl text-xl opacity-100 font-semibold text-green-400 mb-3">
           Massive,<span className="text-yellow-400"> Decentralized </span>{" "}
           <span className="text-red-400">Connectivity</span>
         </h3>
-        <p className="custom-caption-text text-gray-800">
+        <p className="custom-caption-text lg:text-xl md:text-xl sm:text-xl text-md text-gray-800">
           Machine Learning (ML) is a subset of Artificial Intelligence (AI) that
           can potentially transform various industries, including finance and
           Cryptocurrency. Unlike traditional programming, ML algorithms enable
@@ -48,7 +50,7 @@ const IntroductiontoAI = ({ handleRoute }) => {
         </button>
       </div>
 
-      <div className="pb-4 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7 -mt-16 mb-5">
+      <div className="pb-4 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7  mb-5">
         <div className="flex flex-col bg-gradient-to-b from-green-200 to-green-300 shadow p-8 rounded-lg w-3/4 md:w-1/3 gap-6 hover:scale-105 transition duration-300">
           <h3 className="text-gray-900 text-xl font-bold">
             Pattern Recognition Technology

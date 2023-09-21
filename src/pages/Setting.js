@@ -97,12 +97,12 @@ const Setting = () => {
         <div>
           <div className="flex flex-col items-center mt-6 mb-8">
             <div className="w-32 h-32 mb-12 flex justify-center overflow-hidden items-center rounded-full outline outline-offset-4 outline-1 outline-red-500">
-              <img
-                src={`${imageURL || "/img/avatar.png"} `}
-                className="w-full h-full object-cover"
-                alt="Avatar"
-              />
-            </div>
+                              <img
+                  src={`${imageURL || "/img/avatar.png"} `}
+                  className="w-full h-full object-cover"
+                  alt="Avatar"
+                />
+                          </div>
             <input
               onChange={handleImageChange}
               type="file"
