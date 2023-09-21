@@ -115,7 +115,7 @@ const WhyUseInsig = () => {
 
   return (
     <div
-      className="flex flex-col mb-24 items-center px-4 py-12 bg-cover rounded w-full"
+      className="flex w-full flex-col text-center md:text-left mb-24 items-center px-4 py-12 bg-cover rounded"
       style={{ backgroundImage: "url('/img/b2.jpg')" }}
       id="about"
     >
@@ -128,36 +128,36 @@ const WhyUseInsig = () => {
         educational resource Tradeciety (www.tradeciety.com){" "}
       </h4>
       <div className="p-10 w-full max-w-4xl flex flex-col md:flex-row md:items-start md:justify-center items-center gap-x-12 gap-y-7">
-        <div className="flex flex-col w-3/4 md:w-1/3 gap-6">
+        <div className="flex items-center flex-col w-3/4 md:w-1/3 gap-6">
           <BiWallet className="w-14 h-14 cursor-pointer text-blue-400 transform rotate-0 hover:rotate-180 transition-transform duration-300" />
           <h4 className="text-gray-100 text-2xl font-semibold">
             95 % of traders in Crypto lose money
           </h4>
         </div>
-        <div className="flex flex-col w-3/4 md:w-1/3 gap-6">
+        <div className="flex items-center flex-col w-3/4 md:w-1/3 gap-6">
           <FaWalking className="w-14 h-14 cursor-pointer text-blue-400 transform rotate-0 hover:rotate-0 transition-transform duration-300" />
           <h4 className="text-gray-100 text-2xl font-semibold">
             80% of day traders quit in the first two years
           </h4>
         </div>
-        <div className="flex flex-col w-3/4 md:w-1/3 gap-6">
+        <div className="flex items-center flex-col w-3/4 md:w-1/3 gap-6">
           <BsCurrencyExchange className="w-14 h-14 cursor-pointer text-blue-400 transform rotate-0 hover:rotate-180 transition-transform duration-300" />
           <h4 className="text-gray-100 text-2xl font-semibold">
             Traders with a ten-year track record of losing continue to trade!
           </h4>
         </div>
       </div>
-      <div className="p-10 w-full max-w-4xl flex flex-col md:flex-row md:items-start md:justify-center items-center gap-x-12 gap-y-7">
+      <div className="p-10 w-full max-w-6xl flex flex-col md:flex-row md:items-start md:justify-center items-center gap-x-12 gap-y-7">
         <div className="relative flex flex-col items-center p-4 border-4 border-blue-400 hover:border-white group rounded-2xl w-3/4 md:w-1/3 overflow-hidden group">
           <div className="absolute left-0 top-0 w-0 h-full bg-red-400 transition-all duration-1000 origin-left group-hover:w-full z-10"></div>
           <div className="absolute right-0 top-0 w-0 h-full bg-red-400 transition-all duration-1000 origin-right group-hover:w-full z-10"></div>
           <h2 className="text-5xl py-3 group-hover:text-white font-bold text-blue-400 relative z-20">
             2-5
           </h2>
-          <p className="text-2xl font-bold group-hover:text-white text-blue-400 relative z-20">
+          <p className="text-2xl text-center font-bold group-hover:text-white text-blue-400 relative z-20">
             Crypto Signals
           </p>
-          <p className="text-2xl font-bold group-hover:text-white text-blue-400 relative z-20">
+          <p className="text-2xl text-center font-bold group-hover:text-white text-blue-400 relative z-20">
             Per day
           </p>
         </div>
@@ -198,7 +198,7 @@ const WhyUseInsig = () => {
         <h2 className=" text-white custom-mini-heading mb-3">
           Our <span className="text-orange-400">Goals</span>{" "}
         </h2>
-        <div className="bg-gray-100 p-10 md:p-14 shadow-2xl shadow-gray-600  rounded-xl flex flex-col md:flex-row md:items-start md:justify-center items-center gap-x-12 gap-y-7">
+        <div className="bg-gray-100 p-10 md:p-14 shadow-2xl shadow-gray-600  rounded-xl flex flex-col lg:flex-row md:items-start md:justify-center items-center gap-x-12 gap-y-7">
           <div className="flex w-4/5 md:w-1/3 gap-6">
             <BsFillPersonFill className="w-14 h-14 cursor-pointer text-blue-400" />
             <div className="flex flex-col">

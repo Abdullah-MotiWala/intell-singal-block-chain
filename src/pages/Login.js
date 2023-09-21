@@ -44,7 +44,9 @@ const Login = () => {
       };
 
       if (isLogin) {
+        console.log("inner if")
         const response = await api("sign-in", "POST", data);
+        console.log(response,"response")
         if (response.success) {
           dispatch(setToken({ token: response.data.token }));
           dispatch(setUser(decodeToken(response.data.token)));
@@ -87,7 +89,7 @@ const Login = () => {
       <div className="w-full h-screen flex justify-center items-center">
         <form
           onSubmit={loginHandler}
-          className="z-10 bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-20 py-12"
+          className="z-10 w-4/5 lg:w-auto bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-3 lg:px-20 py-12"
         >
           <div className="w-full relative">
             <Link to={"/"}>
@@ -101,7 +103,7 @@ const Login = () => {
             <div className="flex relative items-center ">
               <FiUser className="absolute left-1  w-7 h-7 ml-2 p-1 text-gray-500" />
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="text"
                 placeholder="User Name *"
                 required
@@ -110,7 +112,7 @@ const Login = () => {
             <div className="flex relative items-center ">
               <FiMail className=" absolute left-1 w-6 h-6 ml-2 text-gray-500" />
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="email"
                 placeholder="Email Address *"
                 required
@@ -119,7 +121,7 @@ const Login = () => {
             <div className="flex relative items-center">
               <FiLock className=" absolute left-1 w-6 h-6 ml-2 text-gray-500" />
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type={`${showPassword ? "text" : "password"}`}
                 placeholder="Password *"
                 required
@@ -142,7 +144,7 @@ const Login = () => {
                 <>
                   <FiLock className=" absolute left-1 w-6 h-6 ml-2 text-gray-500" />
                   <input
-                    className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                    className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                     type={`${showConfirmPassword ? "text" : "password"}`}
                     placeholder="Confirm Password *"
                     required

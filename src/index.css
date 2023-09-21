@@ -30,11 +30,15 @@
     line-height: 1.1;
   }
   .custom-main-heading {
-    @apply text-[160px] font-semibold -tracking-[10px];
+    @apply text-[80px] font-semibold -tracking-[10px];
     line-height: 0.8;
   }
   .custom-mini-heading {
     @apply text-[66px] font-semibold -tracking-[4px];
+    line-height: 0.9;
+  }
+  .custom-mini-headings {
+    @apply  font-semibold ;
     line-height: 0.9;
   }
   .custom-mini-sub-heading {

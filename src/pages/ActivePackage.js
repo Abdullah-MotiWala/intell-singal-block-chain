@@ -19,7 +19,7 @@ const ActivePackage = () => {
               No Plan Found
             </h1>
             <Link
-              to={"/"}
+              to={"/panel/plan"}
               className="button panel-primary-bg rounded-xl text-white font-bold p-4"
             >
               Buy Plan
