@@ -10,12 +10,12 @@ const IntroductiontoAI = ({ handleRoute }) => {
     <img className="  object-fit" src="/img/b4.jpg" alt="b4" />
     </div>
       <div className=" w-4/5 bg-blue-400 bg-opacity-0 flex flex-col items-center gap-4 mb-20">
-        <h2 className="custom-sub-heading lg:text-5xl md:text-5xl sm:text-5xl text-2xl text-center mb-3">
+        <h2 className="custom-sub-heading text-center mb-3">
           Introduction to <span className="text-red-400">AI </span> and{" "}
           <span className="text-orange-400">ML </span> with Application and
           Future
         </h2>
-        <h3 className="custom-mini-sub-heading lg:text-3xl md:text-3xl sm:text-3xl text-xl opacity-100 font-semibold text-green-400 mb-3">
+        <h3 className="custom-mini-sub-heading lg:text-3xl md:text-xl text-xl opacity-100 font-semibold text-green-400 mb-3">
           Massive,<span className="text-yellow-400"> Decentralized </span>{" "}
           <span className="text-red-400">Connectivity</span>
         </h3>

@@ -111,7 +111,7 @@ const NetworkBanner = ({ handleRoute }) => {
         </div>
         <div
           onClick={handleRoute}
-          className=" py-3 custom-button ml-auto bg-gray-800 text-white shadow-lg   hover:bg-sk1 transition duration-300 ease-in-out"
+          className=" py-3 custom-button ml-0 lg:ml-auto bg-gray-800 text-white shadow-lg   hover:bg-sk1 transition duration-300 ease-in-out"
         >
           View Network Coverage
         </div>

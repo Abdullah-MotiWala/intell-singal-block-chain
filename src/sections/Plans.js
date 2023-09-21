@@ -229,7 +229,7 @@ const Plans = () => {
       id="specialoffers"
     >
       <h2 className="custom-mini-heading mb-3">Pricing</h2>
-      <h3 className="custom-caption-text text-gray-700">
+      <h3 className="custom-caption-text text-center w-4/5 lg:w-auto text-gray-700">
         You can start with a free trial or buy the VIP Package
       </h3>
       <div className="w-full py-4 flex flex-col items-center">

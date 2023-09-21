@@ -2,7 +2,7 @@ const WhatAreInsig = () => {
   return (
     <div
       id="whatWeAre"
-      className="flex flex-col  items-center mt-10 lg:flex-row  w-full  max-w-6xl min-h-screen"
+      className="flex flex-col  items-center mt-10 lg:flex-row  w-full  max-w-6xl min-h-full lg:min-h-screen"
     >
       <div className="w-2/3 flex justify-center lg:w-1/2 py-8 lg:pl-8">
         <img
@@ -12,8 +12,8 @@ const WhatAreInsig = () => {
           alt="a"
         />
       </div>
-      <div className=" lg:w-3/4 md:w-3/4 w-full px:4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center">
-        <h1 className="mb-3 text-5xl text-white leading-[4rem]">
+      <div className=" lg:w-3/4 md:w-3/4 w-4/5 px:4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center">
+        <h1 className="mb-3 custom-mini-heading text-white leading-[4rem]">
           What are Intelligent{" "}
           <span className="text-orange-400 animate-pulse  ">Signals?</span>
         </h1>

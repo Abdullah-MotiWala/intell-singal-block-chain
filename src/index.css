@@ -22,15 +22,15 @@
     @apply text-red-500;
   }
   .custom-caption-text {
-    @apply text-white  font-light opacity-80 ;
+    @apply text-white text-xl font-light opacity-80 ;
     line-height: 1.4;
   }
   .custom-sub-heading {
-    @apply text-[#888888]  font-semibold -tracking-[2px];
+    @apply text-[#888888] text-[46px] font-semibold -tracking-[2px];
     line-height: 1.1;
   }
   .custom-main-heading {
-    @apply text-[160px] font-semibold -tracking-[10px];
+    @apply text-[80px] font-semibold -tracking-[10px];
     line-height: 0.8;
   }
   .custom-mini-heading {
@@ -42,7 +42,7 @@
     line-height: 0.9;
   }
   .custom-mini-sub-heading {
-    @apply font-semibold -tracking-[2px] opacity-25 text-white;
+    @apply text-3xl font-semibold -tracking-[2px] opacity-25 text-white;
     line-height: 1.1;
   }
   .custom-button {

@@ -3,14 +3,14 @@ import { FaRegLightbulb } from "react-icons/fa";
 const VideoSection = ({ handleRoute }) => {
   return (
     <div
-      className="py-12 flex flex-col items-center w-full min-h-screen"
+      className="py-12 flex flex-col items-center w-full h-auto lg:min-h-screen"
       id="service"
     >
-      <div className=" bg-gradient-to-r from-orange-400 to-red-500  w-2/3 rounded-t-lg flex justify-center">
-        <div className="py-6 px-4 w-full flex justify-around items-center">
+      <div className=" bg-gradient-to-r from-orange-400 to-red-500 w-4/5 md:w-2/3 rounded-t-lg flex justify-center">
+        <div className="py-6 px-4 w-full flex flex-col lg:flex-row justify-around items-center">
           <button
             onClick={handleRoute}
-            className=" rounded-full px-5 py-2 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-[#0061ff] text-black hover:scale-95 transition duration-300 ease-in-out "
+            className=" rounded-full px-5 py-2 md:w-auto w-full md:my-auto my-3 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-[#0061ff] text-black hover:scale-95 transition duration-300 ease-in-out "
           >
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gray-800 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-white transition duration-[700ms] group-hover:text-white ease">
@@ -23,7 +23,7 @@ const VideoSection = ({ handleRoute }) => {
                 "https://intellsignals.com/wp-content/uploads/2023/05/whitepaper.pdf"
               )
             }
-            className=" rounded-full px-5 py-2 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-green-500 text-black hover:scale-95 transition duration-300 ease-in-out "
+            className=" rounded-full px-5 py-2 md:w-auto w-full md:my-auto my-3 overflow-hidden relative group cursor-pointer font-semibold text-lg bg-green-500 text-black hover:scale-95 transition duration-300 ease-in-out "
           >
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gray-800 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-white transition duration-[700ms] group-hover:text-white ease">
@@ -32,7 +32,7 @@ const VideoSection = ({ handleRoute }) => {
           </button>
         </div>
       </div>
-      <div className="bg-[#686767] hover:bg-[#7f7e7e] rounded-b-3xl  px-10 overflow-x-auto py-6 w-2/3 flex flex-col  items-center hover:shadow-2xl hover:scale-105 transition-all cursor-pointer duration-500">
+      <div className="bg-[#686767] hover:bg-[#7f7e7e] rounded-b-3xl  px-10 overflow-x-auto py-6 w-4/5 md:w-2/3 flex flex-col  items-center hover:shadow-2xl hover:scale-105 transition-all cursor-pointer duration-500">
         <div className="pb-6 flex flex-col  gap-2">
           <h4 className="text-white md:font-semibold  text-lg md:text-3xl">
             In this video, you will learn{" "}
@@ -46,18 +46,18 @@ const VideoSection = ({ handleRoute }) => {
         </div>
 
         <div className="relative">
-          <div>
+          <div className="hidden lg:inline">
             <img
               src="/img/screen.png"
               alt="ScreenImage"
-              className="w-[450px] object-contain "
+              className="w-[450px] object-contain"
             />
           </div>
-          <div className="absolute top-16 left-5">
+          <div className="lg:absolute relative top-0 left-0 mb-2 lg:mb-0 lg:top-16 lg:left-5">
             <iframe
               // className="rounded-3xl"
-              width="415"
-              height="230"
+              // width="415"
+              // height="230"
               // width="100"
               // height="100"
               src="https://www.youtube.com/embed/lCUlyvf9xrs"
@@ -65,6 +65,7 @@ const VideoSection = ({ handleRoute }) => {
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
+              className="lg:w-[415px] lg:h-[230px] rounded-sm"
             ></iframe>
           </div>
           <div class="flex justify-center items-center">

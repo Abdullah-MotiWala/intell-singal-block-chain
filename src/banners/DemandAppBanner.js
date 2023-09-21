@@ -3,11 +3,11 @@ const DemandAppBanner = ({ handleRoute }) => {
     <section id="damand" className="w-full">
       <div className="bg-gradient-to-b from-purple-400 to-purple-700 mt-6 w-full flex justify-center">
         <div className="py-12 px-12  w-full  flex flex-col lg:flex-row  items-center gap-y-8">
-          <div className="flex flex-col">
-            <h3 className="lg:text-3xl md:text-3xl sm:text-3xl text-xl  opacity-100 text-white">
+          <div className="flex flex-col gap-4 md:gap-0 text-center md:text-left">
+            <h3 className="custom-mini-sub-heading  opacity-100 text-white">
               Make your on demand app
             </h3>
-            <h3 className=" lg:text-3xl md:text-3xl sm:text-3xl text-xl opacity-100 text-white">
+            <h3 className="custom-mini-sub-heading opacity-100 text-white">
               The next <span className="text-orange-400">Success </span>
               <span className="text-red-500">Story</span>{" "}
             </h3>
