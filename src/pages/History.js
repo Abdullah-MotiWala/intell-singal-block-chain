@@ -36,7 +36,7 @@ const History = () => {
       <div className="bg-white h-[80vh] overflow-y-auto mt-4 rounded-md p-2">
         {(user?.purchased_plan === null ||
           user?.purchased_plan === undefined) && (
-          <div className="w-full bg-pink flex flex-col h-full justify-center items-center">
+          <div className="w-full bg-pink flex flex-col text-center h-full justify-center items-center">
             {" "}
             <h1 className="text-3xl font-bold text-gray-900 mb-6">
               No History Found

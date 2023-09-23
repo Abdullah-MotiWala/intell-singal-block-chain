@@ -33,10 +33,10 @@ const UpdatePassword = () => {
   return (
     <div className="bg-blue-950 w-full text-center">
       <CustomParticle />
-      <div className="w-full my-24 flex justify-center">
+      <div className="w-full h-screen flex justify-center items-center">
         <form
           onSubmit={forgetPasswordHandler}
-          className="z-10 bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-20 py-12"
+          className="z-10 w-4/5 lg:w-auto bg-white shadow-xl flex flex-col  rounded-xl gap-6 px-3 lg:px-20 py-12"
         >
           <h2 className="text-gray-700 text-4xl font-medium my-4">
             {"Reset Password"}
@@ -44,7 +44,7 @@ const UpdatePassword = () => {
           <div className="flex flex-col gap-y-5 h-full justify-between">
             <div className="flex relative items-center ">
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 placeholder="Password *"
                 required
                 type="password"
@@ -52,7 +52,7 @@ const UpdatePassword = () => {
             </div>
             <div className="flex relative items-center ">
               <input
-                className="pl-12 w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 placeholder="Confirm Password*"
                 required
                 type="password"

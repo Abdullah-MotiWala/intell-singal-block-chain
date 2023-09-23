@@ -64,7 +64,7 @@ const PanelLayout = () => {
       <div
         className={`${
           isSidebarOpen ? "md:ml-0 -ml-64" : "-ml-64"
-        } transition-margin duration-300 p-6 py-4 w-[90%] h-screen overflow-y-scroll`}
+        } transition-margin duration-300 p-6 py-4 w-full md:w-[90%] h-screen overflow-y-scroll`}
       >
         {/* Outlet content */}
         <Outlet />
