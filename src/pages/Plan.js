@@ -234,11 +234,11 @@ const Plan = () => {
             checked={isDiscountPlan}
             name="planType"
             class="w-4 h-4 
-            text-orange-500 cursor-pointer bg-gray-100 border-gray-300 focus:ring-red-400 dark:focus:ring-red-500 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+            text-orange-500 cursor-pointer bg-gray-100 border-gray-300 focus:ring-red-400 dark:focus:ring-red-500 dark:ring-offset-gray-800 focus:ring-2 "
           />
           <label
             for="default-radio-1"
-            class="ml-2 cursor-pointer font-light text-gray-900 dark:text-gray-300"
+            class="ml-2 cursor-pointer font-light text-gray-900"
           >
             Discounted Plan
           </label>
@@ -255,11 +255,11 @@ const Plan = () => {
             type="radio"
             id="default-radio-2"
             class="w-4 h-4
-             text-red-500 cursor-pointer bg-gray-100 border-gray-300 focus:ring-red-400 dark:focus:ring-red-500 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+             text-red-500 cursor-pointer bg-gray-100 border-gray-300 focus:ring-red-400 dark:focus:ring-red-500 dark:ring-offset-gray-800 focus:ring-2 "
           />
           <label
             for="default-radio-2"
-            class="ml-2 cursor-pointer font-light text-gray-900 dark:text-gray-300"
+            class="ml-2 cursor-pointer font-light text-gray-900"
           >
             Regular Plan
           </label>
@@ -269,7 +269,7 @@ const Plan = () => {
       {!isDiscountPlan && (
         <div>
           <div className="flex flex-col items-center w-full md:flex-row md:items-stretch md:justify-center gap-8">
-            <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in mx-6">
+            <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-full md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in mx-2 md:mx-6">
               <div className="flex flex-col  w-full  mx-6  ">
                 <p className="font-bold">{ALL_PACKAGES[0].type}</p>
                 <h3 className="text-white text-4xl font-bold ">
@@ -319,7 +319,7 @@ const Plan = () => {
               </div>
             </div>
 
-            <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
+            <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-full md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
               <div className="flex flex-col  w-full  mx-6  ">
                 <p className="font-bold">{`${ALL_PACKAGES[1].type} / ${ALL_PACKAGES[1].name}`}</p>
                 <div className="flex flex-row ">
@@ -370,7 +370,7 @@ const Plan = () => {
               </div>
             </div>
 
-            <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
+            <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-full md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
               <div className="flex flex-col  w-full  mx-6  ">
                 <p className="font-bold">
                   {`${ALL_PACKAGES[2].price} / ${ALL_PACKAGES[2].name}`}
@@ -428,7 +428,7 @@ const Plan = () => {
       )}
       {isDiscountPlan && (
         <div className="flex py-6 flex-col items-center w-full md:flex-row md:items-stretch md:justify-center gap-8">
-          <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
+          <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-full md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
             <div className="flex flex-col  w-full  mx-6  ">
               <p className="font-bold">{`${ALL_PACKAGES[3].type} / ${ALL_PACKAGES[3].name}`}</p>
               <div className="flex flex-row ">
@@ -477,7 +477,7 @@ const Plan = () => {
               </button>
             </div>
           </div>
-          <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-3/4 md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
+          <div className="relative py-4 flex flex-col bg-gradient-to-r from-orange-400 to-red-500  rounded-xl shadow-2xl w-full md:w-1/4 opacity-90 hover:opacity-100 hover:scale-105 transition duration-300 ease-in">
             <div className="flex flex-col  w-full  mx-6  ">
               <p className="font-bold">{`${ALL_PACKAGES[4].type} / ${ALL_PACKAGES[4].name}`}</p>
               <div className="flex flex-row ">

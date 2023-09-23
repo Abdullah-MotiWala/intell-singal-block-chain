@@ -97,12 +97,12 @@ const Setting = () => {
         <div>
           <div className="flex flex-col items-center mt-6 mb-8">
             <div className="w-32 h-32 mb-12 flex justify-center overflow-hidden items-center rounded-full outline outline-offset-4 outline-1 outline-red-500">
-                              <img
-                  src={`${imageURL || "/img/avatar.png"} `}
-                  className="w-full h-full object-cover"
-                  alt="Avatar"
-                />
-                          </div>
+              <img
+                src={`${imageURL || "/img/avatar.png"} `}
+                className="w-full h-full object-cover"
+                alt="Avatar"
+              />
+            </div>
             <input
               onChange={handleImageChange}
               type="file"
@@ -117,11 +117,11 @@ const Setting = () => {
               </div>
             </label>
           </div>
-          <div className="flex flex-col gap-y-5 h-full justify-between">
-            <div className="flex relative items-center ">
+          <div className="flex w-full flex-col gap-y-5 h-full justify-between">
+            <div className="flex w-full relative items-center ">
               <FiMail className=" absolute left-1 w-6 h-6 ml-2 panel-primary-text" />
               <input
-                className="cursor-not-allowed pl-12 w-96 h-12 rounded border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="cursor-not-allowed pl-12 w-full lg:w-96 h-12 rounded border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="email"
                 placeholder="Email Address"
                 readOnly
@@ -129,10 +129,10 @@ const Setting = () => {
                 value={data.email}
               />
             </div>
-            <div className="flex relative items-center ">
+            <div className="flex w-full relative items-center ">
               <FiUser className="absolute left-1  w-7 h-7 ml-2 p-1 panel-primary-text" />
               <input
-                className="pl-12 w-96 h-12 rounded border border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="text"
                 name="name"
                 placeholder="User Name"
@@ -140,10 +140,10 @@ const Setting = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="flex relative items-center">
+            <div className="flex w-full relative items-center">
               <BsGlobe className="absolute left-1  w-7 h-7 ml-2 p-1 panel-primary-text" />
               <input
-                className="pl-12 w-96 h-12 rounded border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
+                className="pl-12 w-full lg:w-96 h-12 rounded border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
                 type="text"
                 name="country"
                 placeholder="Country"

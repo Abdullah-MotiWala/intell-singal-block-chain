@@ -74,20 +74,26 @@ const TopBar = () => {
   if (user?.purchased_plan == 2) activePAckage = "Premium";
   if (user?.purchased_plan == 4) activePAckage = "VIP";
   return (
-    <div className="flex gap-4 flex-col md:flex-row justify-between">
-      <TopCard title={"Active Package"} caption={activePAckage} />
-      <TopCard title={"User Name"} caption={user?.name} />
-      <TopCard
-        title={"Expires In"}
-        caption={
-          ((user?.purchased_plan === null ||
-            user?.purchased_plan === undefined) &&
-            "00:00:00:00") ||
-          (expired
-            ? "The token has expired."
-            : `${remainingDays}:${remainingHours}:${remainingMinutes}:${remainingSeconds}`)
-        }
-      />
+    <div className="flex gap-4 flex-row w-full overflow-x-auto justify-between">
+      <div className="w-[250px] md:w-1/3">
+        <TopCard title={"Active Package"} caption={activePAckage} />
+      </div>
+      <div className="w-[250px] md:w-1/3">
+        <TopCard title={"User Name"} caption={user?.name} />
+      </div>
+      <div className="w-[250px] md:w-1/3">
+        <TopCard
+          title={"Expires In"}
+          caption={
+            ((user?.purchased_plan === null ||
+              user?.purchased_plan === undefined) &&
+              "00:00:00:00") ||
+            (expired
+              ? "The token has expired."
+              : `${remainingDays}:${remainingHours}:${remainingMinutes}:${remainingSeconds}`)
+          }
+        />
+      </div>
     </div>
   );
 };
