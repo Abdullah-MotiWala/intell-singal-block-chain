@@ -199,7 +199,7 @@ const WhyUseInsig = () => {
           Our <span className="text-orange-400">Goals</span>{" "}
         </h2>
         <div className="bg-gray-100 p-10 md:p-14 shadow-2xl shadow-gray-600  rounded-xl flex flex-col lg:flex-row md:items-start md:justify-center items-center gap-x-12 gap-y-7">
-          <div className="flex w-4/5 md:w-1/3 gap-6">
+          <div className="flex w-4/5 md:w-full sm:w-full gap-6">
             <BsFillPersonFill className="w-14 h-14 cursor-pointer text-blue-400" />
             <div className="flex flex-col">
               <h3 className="text-gray-600 text-5xl font-semibold">
@@ -212,7 +212,7 @@ const WhyUseInsig = () => {
               </h4>
             </div>
           </div>
-          <div className="flex w-4/5 md:w-1/3 gap-6">
+          <div className="flex w-4/5 md:w-full sm:w-full gap-6">
             <BsFillPeopleFill className="w-14 h-14 cursor-pointer text-blue-400" />
             <div className="flex flex-col">
               <h3 className="text-gray-600 text-5xl font-semibold">
@@ -224,7 +224,7 @@ const WhyUseInsig = () => {
               </h4>
             </div>
           </div>
-          <div className="flex w-4/5 md:w-1/3 gap-6">
+          <div className="flex w-4/5 md:w-full sm:w-full gap-6">
             <FaUsers className="w-14 h-14 cursor-pointer text-blue-400" />
             <div className="flex flex-col">
               <h3 className="text-gray-600 text-5xl font-semibold">
