@@ -35,7 +35,10 @@ const FAQ = () => {
     }
   ];
   return (
-    <section id="faq">
+    <section id="faq" 
+    data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
+    >
       <div className="relative py-16 bg-gray-100 min-h-full lg:min-h-screen w-full flex flex-col items-center gap-8 ">
         <div>
           <div className="relative bg-gray-100 min-h-full lg:min-h-screen w-full flex flex-col items-center gap-8 ">

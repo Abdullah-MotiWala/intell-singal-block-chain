@@ -5,6 +5,8 @@ const VideoSection = ({ handleRoute }) => {
     <div
       className="py-12 flex flex-col items-center w-full h-auto lg:min-h-screen"
       id="service"
+      data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom"
     >
       <div className=" bg-gradient-to-r from-orange-400 to-red-500 w-4/5 md:w-2/3 rounded-t-lg flex justify-center">
         <div className="py-6 px-4 w-full flex flex-col lg:flex-row justify-around items-center">

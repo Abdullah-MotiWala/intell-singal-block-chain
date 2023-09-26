@@ -227,6 +227,8 @@ const Plans = () => {
     <div
       className=" flex flex-col bg-gray-200 items-center py-8  w-full "
       id="specialoffers"
+      data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
     >
       <h2 className="custom-mini-heading mb-3">Pricing</h2>
       <h3 className="custom-caption-text text-center w-4/5 lg:w-auto text-gray-700">

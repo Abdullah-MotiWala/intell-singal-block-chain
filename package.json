@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "cloudinary": "^1.40.0",
     "jwt-decode": "^3.1.2",
     "querystring-es3": "^0.2.1",
@@ -72,4 +73,3 @@
     ]
   }
 }
-

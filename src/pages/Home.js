@@ -40,8 +40,11 @@ const Home = () => {
       <div
         className="flex flex-col items-center mt-20 mb-4 lg:flex-row w-full min-h-full lg:min-h-screen"
         id="home"
+        data-aos="fade-up"
+      data-aos-anchor-placement="top-center"
       >
-        <div className=" w-3/4 lg:w-1/2  lg:pl-32  bg-gr flex flex-col gap-4 justify-center items-center lg:items-stretch">
+        <div className=" w-3/4 lg:w-1/2  lg:pl-32  bg-gr flex flex-col gap-4 justify-center items-center lg:items-stretch"   data-aos="fade-up"
+     data-aos-anchor-placement="top-center"      >
           <div className="bg-gradient-to-r from-purple-700 to-pink-500 text-gray-100 py-1 pl-4  lg:w-full w-11/12 rounded-lg flex items-center hover:opacity-90 ">
             <h1 className="">
               {" "}
@@ -82,7 +85,7 @@ const Home = () => {
             </span>
           </button>
         </div>
-        <div className="flex justify-center w-3/4 lg:w-1/2 pt-8 lg:pr-2  ">
+        <div className="flex justify-center w-3/4 lg:w-1/2 pt-8 lg:pr-2">
           <img
             src="/img/hero.png"
             alt="a"

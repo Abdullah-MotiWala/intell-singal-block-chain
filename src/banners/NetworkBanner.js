@@ -92,6 +92,10 @@ const NetworkBanner = ({ handleRoute }) => {
     <div
       ref={sectionRef}
       className="bg-gradient-to-b from-orange-400 to-red-500 w-full flex justify-center"
+      data-aos="fade-zoom-in"
+     data-aos-easing="ease-in-back"
+     data-aos-delay="300"
+     data-aos-offset="0"
     >
       <div className="py-10 px-4  w-full max-w-6xl flex flex-col lg:flex-row lg:items-start lg:justify-center items-center gap-x-12 gap-y-7">
         <div className="">

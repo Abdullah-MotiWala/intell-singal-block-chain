@@ -6,6 +6,8 @@ const Staking = () => {
       <div
         id="staking"
         className="flex flex-col justify-between items-center mt-5 lg:flex-row w-full min-h-screen"
+        data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
       >
         <div className=" w-3/4 pt-7 lg:w-1/2 lg:pl-10 flex flex-col gap-4 justify-center">
           <h1 className="custom-main-heading md:text-[120px] lg:text-[160px] mb-4">

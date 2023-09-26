@@ -17,7 +17,16 @@ import UnderDevelopment from "./pages/UnderDevelopment";
 import ActivePackage from "./pages/ActivePackage";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import OTP from "./pages/OTP";
+import 'aos/dist/aos.css'; // Import the CSS for AOS
+import AOS from 'aos';
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Set animation duration in milliseconds
+    });
+  }, []);
+  
   return (
     <>
       <BrowserRouter>

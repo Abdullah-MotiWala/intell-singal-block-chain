@@ -3,8 +3,14 @@ const WhatAreInsig = () => {
     <div
       id="whatWeAre"
       className="flex flex-col  items-center mt-10 lg:flex-row  w-full  max-w-6xl min-h-full lg:min-h-screen"
+      data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
     >
-      <div className="w-2/3 flex justify-center lg:w-1/2 py-8 lg:pl-8">
+      <div className="w-2/3 flex justify-center lg:w-1/2 py-8 lg:pl-8" 
+      // data-aos="fade-right"
+    //  data-aos-offset="300"
+    //  data-aos-easing="ease-in-sine"
+     >
         <img
           className="w-auto h-auto rounded-xl hover:scale-95 transition duration-300 ease-in-out"
           loading="lazy"
@@ -12,7 +18,11 @@ const WhatAreInsig = () => {
           alt="a"
         />
       </div>
-      <div className=" lg:w-3/4 md:w-3/4 w-4/5 px:4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center">
+      <div className=" lg:w-3/4 md:w-3/4 w-4/5 px:4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center"
+    //   data-aos="fade-left"
+    //  data-aos-offset="300"
+    //  data-aos-easing="ease-in-sine"
+     >
         <h1 className="mb-3 custom-mini-heading text-white leading-[4rem]">
           What are Intelligent{" "}
           <span className="text-orange-400 animate-pulse  ">Signals?</span>

@@ -2,7 +2,8 @@ import React from "react";
 
 const FreeSignals = ({ handleRoute }) => {
   return (
-    <div className="text-center bg-blue-600 p-10 mt-10 rounded-2xl shadow-lg md:mb-20 mb-0">
+    <div className="text-center bg-blue-600 p-10 mt-10 rounded-2xl shadow-lg md:mb-20 mb-0" data-aos="fade-up"
+    data-aos-anchor-placement="top-center">
       <p className="text-2xl lg:text-5xl md:text-3xl font-black text-white mb-10">
         Free Crypto Signals Channel
       </p>

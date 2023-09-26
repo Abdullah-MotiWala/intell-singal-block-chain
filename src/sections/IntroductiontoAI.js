@@ -5,6 +5,8 @@ const IntroductiontoAI = ({ handleRoute }) => {
     <div
       id="introToAI"
       className="  bg-white min-h-screen w-full flex flex-col items-center "
+      data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
     >
     <div className="w-full h-full">
     <img className="  object-fit" src="/img/b4.jpg" alt="b4" />

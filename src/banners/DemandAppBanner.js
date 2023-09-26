@@ -1,6 +1,10 @@
 const DemandAppBanner = ({ handleRoute }) => {
   return (
-    <section id="damand" className="w-full">
+    <section id="damand" className="w-full" 
+    data-aos="fade-up"
+    data-aos-anchor-placement="top-center"
+    
+    >
       <div className="bg-gradient-to-b from-purple-400 to-purple-700 mt-6 w-full flex justify-center">
         <div className="py-12 px-12  w-full  flex flex-col lg:flex-row  items-center gap-y-8">
           <div className="flex flex-col gap-4 md:gap-0 text-center md:text-left">
