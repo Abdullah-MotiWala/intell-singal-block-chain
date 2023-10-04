@@ -109,12 +109,12 @@ const NetworkBanner = ({ handleRoute }) => {
             {formatCount(count2)}
           </h4>
         </div>
-        <div
+        {/* <div
           onClick={handleRoute}
           className=" py-3 custom-button ml-0 lg:ml-auto bg-gray-800 text-white shadow-lg   hover:bg-sk1 transition duration-300 ease-in-out"
         >
           View Network Coverage
-        </div>
+        </div> */}
       </div>
     </div>
   );

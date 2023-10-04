@@ -12,6 +12,7 @@ import {
   Token_Abi,
   Token_Address
 } from "../utils/Contract";
+import * as Swal from "sweetalert2";
 import Web3 from "web3";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -41,6 +42,20 @@ const Plan = () => {
   const webSupply = new Web3("https://bsc-testnet.publicnode.com");
   const buyPackage = async (plan, amount) => {
     try {
+      const result = await Swal.fire({
+        title: "Do you have INSIG token",
+        showDenyButton: true,
+        denyButtonText: "No, I don't have",
+        confirmButtonText: "Yes, I have",
+        color: "rgba(249 115 22)"
+      });
+      if (result.isDenied) {
+        window.open("https://www.coinstore.com/#/spot/INSIGUSDT");
+        return;
+      }
+      if (result.isDismissed) {
+        return;
+      }
       if (address) {
         // console.log("amount", webSupply);
         if (plan == 0) {
@@ -283,17 +298,17 @@ const Plan = () => {
                 </div>
                 <div className="border-b py-5">
                   <div className="flex">
-                    <p className="text-white font-bold">Number of days</p>
-                    <p className="text-white ml-auto font-semibold">
-                      {ALL_PACKAGES[0].numOfDays}
-                    </p>
-                  </div>
-                  <div className="flex">
                     <p className="text-white font-semibold">
                       Number of Signals
                     </p>
                     <p className="text-white ml-auto font-bold">
                       {ALL_PACKAGES[0].numOfSignals}
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <p className="text-white font-bold">Number of days</p>
+                    <p className="text-white ml-auto font-semibold">
+                      {ALL_PACKAGES[0].numOfDays}
                     </p>
                   </div>
                 </div>
@@ -334,17 +349,17 @@ const Plan = () => {
                 </div>
                 <div className="border-b py-5">
                   <div className="flex">
-                    <p className="text-white font-bold">Number of days</p>
-                    <p className="text-white ml-auto font-semibold">
-                      {ALL_PACKAGES[1].numOfDays}
-                    </p>
-                  </div>
-                  <div className="flex">
                     <p className="text-white font-semibold">
                       Number of Signals
                     </p>
                     <p className="text-white ml-auto font-bold">
                       {ALL_PACKAGES[1].numOfSignals}
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <p className="text-white font-bold">Number of days</p>
+                    <p className="text-white ml-auto font-semibold">
+                      {ALL_PACKAGES[1].numOfDays}
                     </p>
                   </div>
                 </div>
@@ -388,17 +403,17 @@ const Plan = () => {
                 </div>
                 <div className="border-b py-5">
                   <div className="flex">
-                    <p className="text-white font-bold">Number of days</p>
-                    <p className="text-white ml-auto font-semibold">
-                      {ALL_PACKAGES[2].numOfDays}
-                    </p>
-                  </div>
-                  <div className="flex">
                     <p className="text-white font-semibold">
                       Number of Signals
                     </p>
                     <p className="text-white ml-auto font-bold">
                       {ALL_PACKAGES[2].numOfSignals ?? "Unlimited"}
+                    </p>
+                  </div>
+                  <div className="flex">
+                    <p className="text-white font-bold">Number of days</p>
+                    <p className="text-white ml-auto font-semibold">
+                      {ALL_PACKAGES[2].numOfDays}
                     </p>
                   </div>
                 </div>
@@ -444,15 +459,15 @@ const Plan = () => {
               </div>
               <div className="border-b py-5">
                 <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[3].numOfDays}
-                  </p>
-                </div>
-                <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[3].numOfSignals}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[3].numOfDays}
                   </p>
                 </div>
               </div>
@@ -493,15 +508,15 @@ const Plan = () => {
               </div>
               <div className="border-b py-5">
                 <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[4].numOfDays}
-                  </p>
-                </div>
-                <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[4].numOfSignals ?? "Unlimited"}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[4].numOfDays}
                   </p>
                 </div>
               </div>

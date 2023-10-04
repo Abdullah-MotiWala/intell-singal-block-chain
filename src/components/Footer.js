@@ -201,27 +201,10 @@ const Footer = () => {
           </div>
           <div className="  col-span-1 flex flex-col gap-3">
             <h2 className="  font-bold text-lg">Quick Links</h2>
-            <Link to="performance">
-              <div className="relative inline-block group">
-                <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
-                  Performance
-                </span>
-                <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
-              </div>
-            </Link>
-            
             <Link to="blog">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Blog
-                </span>
-                <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
-              </div>
-            </Link>
-            <Link to="service">
-              <div className="relative inline-block group">
-                <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
-                  Terms & Privacy Policy
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
@@ -355,8 +338,14 @@ const Footer = () => {
             <img src="/img/tp.png" alt="home" className="w-5 h-5" />
           </div>
         </div>
-        <div>
+        <div className="relative w-full">
           <p className="text-white">@copyright2023 IntellSignals.com</p>
+          <p
+            onclick={() => window.open("https://codezoone.netlify.app/")}
+            class="text-xs bg-slate-900 p-1 px-2 rounded-3xl relative md:absolute right-0 md:right-4 hover:cursor-pointer hover:font-bold hover:bg-secondary hover:scale-x-105 hover:duration-300"
+          >
+            Developed By CodeZone
+          </p>
         </div>
       </div>
     </footer>

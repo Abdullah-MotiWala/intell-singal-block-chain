@@ -211,7 +211,7 @@ const Login = () => {
                   <p className="text-[1rem] font-normal text-center mt-[6px]">
                     Do you want to know ?{" "}
                     <span
-                      onClick={() => navigate("/?page=howitwork")}
+                      onClick={() => navigate("/")}
                       className="cursor-pointer underline text-red-500"
                     >
                       How it works

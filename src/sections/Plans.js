@@ -18,6 +18,8 @@ import { api } from "../utils/api";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlan, setUser } from "../store/user";
 import { ALL_PACKAGES } from "../utils/contants";
+import * as Swal from "sweetalert2";
+import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 
 const Plans = () => {
   const { user } = useSelector((state) => state.user);
@@ -44,6 +46,21 @@ const Plans = () => {
       navigate("/login");
       return;
     }
+    const result = await Swal.fire({
+      title: "Do you have INSIG token",
+      showDenyButton: true,
+      denyButtonText: "No, I don't have",
+      confirmButtonText: "Yes, I have",
+      color: "rgba(249 115 22)"
+    });
+    if (result.isDenied) {
+      window.open("https://www.coinstore.com/#/spot/INSIGUSDT");
+      return;
+    }
+    if (result.isDismissed) {
+      return;
+    }
+
     try {
       if (address) {
         // console.log("amount", webSupply);
@@ -230,7 +247,7 @@ const Plans = () => {
     >
       <h2 className="custom-mini-heading mb-3">Pricing</h2>
       <h3 className="custom-caption-text text-center w-4/5 lg:w-auto text-gray-700">
-        You can start with a free trial or buy the VIP Package
+        You can start with a free trial or subscribe to Premium or VIP Package
       </h3>
       <div className="w-full py-4 flex flex-col items-center">
         <h2 className="cursor-pointer custom-mini-sub-heading text-gray-800 opacity-100 hover:delay-500  hover:underline  hover:underline-offset-8  hover:decoration-2 transition-all duration-500">
@@ -251,15 +268,15 @@ const Plans = () => {
               </div>
               <div className="border-b py-5">
                 <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[0].numOfDays}
-                  </p>
-                </div>
-                <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[0].numOfSignals}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[0].numOfDays}
                   </p>
                 </div>
               </div>
@@ -300,15 +317,15 @@ const Plans = () => {
               </div>
               <div className="border-b py-5">
                 <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[1].numOfDays}
-                  </p>
-                </div>
-                <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[1].numOfSignals}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[1].numOfDays}
                   </p>
                 </div>
               </div>
@@ -348,19 +365,19 @@ const Plans = () => {
 
             <div className="flex flex-col mx-6 pb-2 ">
               <div className="border-b py-5">
-                <p className="text-white">${ALL_PACKAGES[2].description}</p>
+                <p className="text-white">{ALL_PACKAGES[2].description}</p>
               </div>
               <div className="border-b py-5">
-                <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[2].numOfDays}
-                  </p>
-                </div>
                 <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[2].numOfSignals ?? "Unlimited"}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[2].numOfDays}
                   </p>
                 </div>
               </div>
@@ -414,15 +431,15 @@ const Plans = () => {
               </div>
               <div className="border-b py-5">
                 <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[3].numOfDays}
-                  </p>
-                </div>
-                <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[3].numOfSignals}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[3].numOfDays}
                   </p>
                 </div>
               </div>
@@ -463,15 +480,15 @@ const Plans = () => {
               </div>
               <div className="border-b py-5">
                 <div className="flex">
-                  <p className="text-white font-bold">Number of days</p>
-                  <p className="text-white ml-auto font-semibold">
-                    {ALL_PACKAGES[4].numOfDays}
-                  </p>
-                </div>
-                <div className="flex">
                   <p className="text-white font-semibold">Number of Signals</p>
                   <p className="text-white ml-auto font-bold">
                     {ALL_PACKAGES[4].numOfSignals ?? "Unlimited"}
+                  </p>
+                </div>
+                <div className="flex">
+                  <p className="text-white font-bold">Number of days</p>
+                  <p className="text-white ml-auto font-semibold">
+                    {ALL_PACKAGES[4].numOfDays}
                   </p>
                 </div>
               </div>
