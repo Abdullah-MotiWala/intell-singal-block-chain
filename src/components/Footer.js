@@ -209,6 +209,7 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </Link>
+            
             <Link to="blog">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
