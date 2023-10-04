@@ -40,7 +40,7 @@ const Nav = () => {
             <div className="divide-y w-32 absolute left-1 top-10 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-white py-2 text-gray-900 rounded-lg">
               <div className="cursor-pointer px-4">
                 <Link
-                  to="whatWeAre"
+                  to="abouts"
                   spy={true}
                   smooth={true}
                   offset={50}
@@ -58,7 +58,7 @@ const Nav = () => {
               <div className="cursor-pointer px-4 ">
                 <Link
                   className="w-full"
-                  to="about"
+                  to="whatWeAre"
                   spy={true}
                   smooth={true}
                   offset={50}
@@ -153,7 +153,7 @@ const Nav = () => {
             <RouterLink to="Ai_Platform">
               <div className="relative inline-block group cursor-pointer">
                 <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
-                  Ai Platform
+                  AI Platform
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
@@ -194,9 +194,9 @@ const Nav = () => {
         </div>
 
         <div className="flex ml-auto">
-          <button className="hidden mr-2 xl:flex rounded-lg px-4 py-1 overflow-hidden relative group cursor-pointer border-2 font-semibold text-[15px] border-orange-400 text-white hover:scale-105 duration-[700ms]">
+          <button className="hidden mr-2 xl:block rounded-lg px-4 py-1 overflow-hidden relative group cursor-pointer border-2 font-semibold text-[15px] border-orange-400 text-white hover:scale-105 duration-[700ms]">
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-orange-400 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-            <span className="relative text-orange-400 transition duration-[700ms] group-hover:text-white ease">
+            <span className="h-full w-full flex items-center relative text-orange-400 transition duration-[700ms] group-hover:text-white ease">
               <a
                 href="https://www.coinstore.com/#/spot/INSIGUSDT"
                 target="_blank"
@@ -226,7 +226,7 @@ const Nav = () => {
           <div className="divide-y border-b-2 border-blue-100 w-32 absolute left-1 top-10 opacity-0 group-hover:opacity-100 transition-all duration-700 bg-white py-2 text-gray-900 rounded-lg">
             <div className="cursor-pointer px-4">
               <Link
-                to="whatWeAre"
+                to="abouts"
                 spy={true}
                 smooth={true}
                 offset={50}
@@ -245,7 +245,7 @@ const Nav = () => {
             <div className="cursor-pointer px-4 ">
               <Link
                 className="w-full"
-                to="about"
+                to="whatWeAre"
                 spy={true}
                 smooth={true}
                 offset={50}
@@ -346,7 +346,7 @@ const Nav = () => {
           <RouterLink to="Ai_Platform">
             <div className="relative inline-block group cursor-pointer">
               <span className="text-white font-normal text-sm relative z-10 group-hover:text-red-500">
-                Ai Platform
+                AI Platform
               </span>
               <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
             </div>

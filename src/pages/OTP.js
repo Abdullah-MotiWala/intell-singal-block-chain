@@ -96,6 +96,10 @@ const OTP = () => {
                 Resend OTP
               </button>
             </div>
+            <p className="-my-2 text-md text-gray-800">
+              Check Your Inbox or Even Spam for{" "}
+              <span className="text-blue-400 font-bold">OTP!</span>
+            </p>
             <div>
               <button className=" rounded-md py-2 overflow-hidden relative group cursor-pointer border-2 font-semibold text-[15px] border-blue-400 text-black hover:scale-105 duration-[700ms] w-64">
                 <span className="absolute transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-blue-700 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease w-full"></span>

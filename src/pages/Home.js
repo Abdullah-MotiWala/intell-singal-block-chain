@@ -22,6 +22,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Navbars from "../components/Navbars";
 import Footer from "../components/Footer";
+import WhoWeAre from "../sections/whoWeAre";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -42,18 +43,20 @@ const Home = () => {
         id="home"
       >
         <div className=" w-3/4 lg:w-1/2  lg:pl-32  bg-gr flex flex-col gap-4 justify-center items-center lg:items-stretch">
-          <div className="bg-gradient-to-r from-purple-700 to-pink-500 text-gray-100 py-1 pl-4  lg:w-full w-11/12 rounded-lg flex items-center hover:opacity-90 ">
+          {/* <div className="bg-gradient-to-r from-purple-700 to-pink-500 text-gray-100 py-1 pl-4  lg:w-full w-11/12 rounded-lg flex items-center hover:opacity-90 ">
             <h1 className="">
               {" "}
               Artificial Intelligence drive token used to access AI technology{" "}
             </h1>
             <MdArrowOutward className="w-8 h-8 py-1 cursor-pointer ml-auto  hover:text-blue-300" />
-          </div>
+          </div> */}
           <h1 className="custom-mini-heading mb-3">
             <span className="text-white">INSIG </span>
             <span className="text-white">TOKEN.</span>{" "}
           </h1>
-          <p className="custom-mini-sub-heading w-full mb-3">Start Trading Now</p>
+          <p className="custom-mini-sub-heading w-full mb-3">
+            Start Trading Now
+          </p>
           <p className="custom-caption-text">
             Welcome to the INSIG Ecosystem – your portal to intelligent crypto
             trading. Explore AI-powered signals, an active crypto community, and
@@ -61,12 +64,12 @@ const Home = () => {
             experiences and beyond.
           </p>
           {/* <button className='mt-4 w-1/2 px-4 py-2 lg:mr-auto font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg hover:translate-y-1 hover:bg-sk1 transition duration-300 ease-in-out '>Start Now</button> */}
-          <button className="md:w-1/2 w-full mt-6 overflow-hidden relative group cursor-pointer  border-2 bg-gray-800 text-[15px] border-yellow-400 text-black hover:scale-105 duration-[700ms] custom-button">
+          <button
+            onClick={handleRoute}
+            className="md:w-1/2 w-full mt-6 overflow-hidden relative group cursor-pointer  border-2 bg-gray-800 text-[15px] border-yellow-400 text-black hover:scale-105 duration-[700ms] custom-button"
+          >
             <span className="absolute w-64 h-0 transition-all duration-[700ms] origin-center rotate-45 -translate-x-20 bg-gradient-to-r from-orange-400 to-red-500 top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-            <span
-              className="font-bold relative text-yellow-400 transition duration-[700ms] group-hover:text-white ease"
-              onClick={handleRoute}
-            >
+            <span className="font-bold relative text-yellow-400 transition duration-[700ms] group-hover:text-white ease">
               {/* <Link
                 to="specialoffers"
                 spy={true}
@@ -97,17 +100,18 @@ const Home = () => {
       <VideoSection handleRoute={handleRoute} />
       <Plans />
       <WhatAreInsig />
-      <FreeSignals handleRoute={handleRoute} />
+      <WhoWeAre />
       <WhyUseInsig />
       {/* <LatestNews /> */}
       <Staking />
+      <FreeSignals handleRoute={handleRoute} />
       {/* <Tokenomics/> */}
       <IntroductiontoAI handleRoute={handleRoute} />
       {/* <OurTrader /> */}
       {/* <InfoBox /> */}
 
       <IntelligentSignalEcosystem />
-      <DemandAppBanner handleRoute={handleRoute} />
+      {/* <DemandAppBanner handleRoute={handleRoute} /> */}
       {/* <FoundingPartners /> */}
       <FAQ />
 

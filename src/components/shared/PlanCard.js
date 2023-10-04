@@ -25,15 +25,15 @@ const PlanCard = ({
         </div>
         <div className="border-b py-5">
           <div className="flex">
-            <p className="text-white font-bold">Number of days</p>
-            <p className="text-white ml-auto font-semibold">
-              {selectedPackage.numOfDays}
-            </p>
-          </div>
-          <div className="flex">
             <p className="text-white font-semibold">Number of Signals</p>
             <p className="text-white ml-auto font-bold">
               {selectedPackage.numOfSignals}
+            </p>
+          </div>
+          <div className="flex">
+            <p className="text-white font-bold">Number of days</p>
+            <p className="text-white ml-auto font-semibold">
+              {selectedPackage.numOfDays}
             </p>
           </div>
         </div>
