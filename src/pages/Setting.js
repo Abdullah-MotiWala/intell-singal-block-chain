@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FiMail, FiUser } from "react-icons/fi";
 import { BsGlobe } from "react-icons/bs";
 import toast from "react-hot-toast";
@@ -6,12 +6,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { api } from "../utils/api";
 import { setUser } from "../store/user";
+import countryList from 'react-select-country-list'
 
 const Setting = () => {
   const { user, token } = useSelector((state) => state.user);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const countryOptions = useMemo(() => countryList().getData(), [])
 
   const initialData = { email: "", name: "", country: "" };
   const [data, setData] = useState(initialData);
@@ -142,14 +144,17 @@ const Setting = () => {
             </div>
             <div className="flex w-full relative items-center">
               <BsGlobe className="absolute left-1  w-7 h-7 ml-2 p-1 panel-primary-text" />
-              <input
+              <select
                 className="pl-12 w-full lg:w-96 h-12 rounded border-red-500 bg-transparent p-2 placeholder:text-gray-500 focus:outline-none"
-                type="text"
                 name="country"
                 placeholder="Country"
                 onChange={handleChange}
                 value={data.country}
-              />
+              >
+              {countryOptions.map((c)=>{
+                return <option  key={c.value} value={c.label}>{c.label}</option>
+              })}
+              </select>
             </div>
           </div>
         </div>
