@@ -14,8 +14,8 @@ const WhatAreInsig = () => {
       </div>
       <div className=" lg:w-3/4 md:w-3/4 w-4/5 px:4  py-8  lg:pl-8 lg:pr-6 flex flex-col gap-4 justify-center">
         <h1 className="mb-3 custom-mini-heading text-white leading-[4rem]">
-          What are Intelligent{" "}
-          <span className="text-orange-400 animate-pulse  ">Signals?</span>
+          What We{" "}
+          <span className="text-orange-400 animate-pulse  ">Are?</span>
         </h1>
         <p className="custom-caption-text ">
           The Intelligent Signals Token (INSIG) is the driving force behind an
