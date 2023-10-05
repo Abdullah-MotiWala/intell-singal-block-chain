@@ -19,11 +19,11 @@ export const ALL_PACKAGES = [
     price: 49,
     name: "Month",
     description:
-      "Unlock exclusive crypto signals and expert analysis in our premium Telegram channel.",
+    "Unlock exclusive crypto signals and expert analysis in our premium channel.",
     numOfDays: 30,
-    numOfSignals: 90,
+    numOfSignals: 5,
     features: [
-      "3 Signals per day",
+      "5 Signals per day",
       "Access to Premium signals.",
       "Opportunity to diversify your portfolio Ideal for traders seeking more signals and a competitive edge."
     ]
