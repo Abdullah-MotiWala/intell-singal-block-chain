@@ -8,7 +8,7 @@ const UnderDevelopment = () => {
     <div className="h-screen w-screen bg-white flex flex-col items-center justify-center">
       <div className="h-2/5">
         <img
-          src="/img/timer.png"
+          src="/img/hourglass.gif"
           alt="ScreenImage"
           className="h-full w-full"
         />

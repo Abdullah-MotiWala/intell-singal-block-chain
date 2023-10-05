@@ -43,13 +43,6 @@ const Home = () => {
         id="home"
       >
         <div className=" w-3/4 lg:w-1/2  lg:pl-32  bg-gr flex flex-col gap-4 justify-center items-center lg:items-stretch">
-          {/* <div className="bg-gradient-to-r from-purple-700 to-pink-500 text-gray-100 py-1 pl-4  lg:w-full w-11/12 rounded-lg flex items-center hover:opacity-90 ">
-            <h1 className="">
-              {" "}
-              Artificial Intelligence drive token used to access AI technology{" "}
-            </h1>
-            <MdArrowOutward className="w-8 h-8 py-1 cursor-pointer ml-auto  hover:text-blue-300" />
-          </div> */}
           <h1 className="custom-mini-heading mb-3">
             <span className="text-white">INSIG </span>
             <span className="text-white">TOKEN.</span>{" "}
@@ -63,7 +56,6 @@ const Home = () => {
             unlock the full potential of the INSIG Token for enhanced trading
             experiences and beyond.
           </p>
-          {/* <button className='mt-4 w-1/2 px-4 py-2 lg:mr-auto font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-white rounded-lg hover:translate-y-1 hover:bg-sk1 transition duration-300 ease-in-out '>Start Now</button> */}
           <button
             onClick={handleRoute}
             className="md:w-1/2 w-full mt-6 overflow-hidden relative group cursor-pointer  border-2 bg-gray-800 text-[15px] border-yellow-400 text-black hover:scale-105 duration-[700ms] custom-button"
@@ -94,7 +86,7 @@ const Home = () => {
         </div>
       </div>
 
-      <NetworkBanner handleRoute={handleRoute} />
+      {/* <NetworkBanner handleRoute={handleRoute} /> */}
 
       <IntelligentSignalsToken />
       <VideoSection handleRoute={handleRoute} />

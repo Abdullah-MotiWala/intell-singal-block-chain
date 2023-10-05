@@ -39,7 +39,7 @@ const IntroductiontoAI = ({ handleRoute }) => {
           addressed.
         </p>
 
-        <button
+        {/* <button
           onClick={handleRoute}
           className="custom-button overflow-hidden relative group cursor-pointer border-2 font-semibold bg-gradient-to-r from-orange-400 to-red-500 text-black "
         >
@@ -47,7 +47,7 @@ const IntroductiontoAI = ({ handleRoute }) => {
           <span className="relative text-white transition duration-[700ms]  ease">
             Use The Network
           </span>
-        </button>
+        </button> */}
       </div>
 
       <div className="pb-4 z-1 px-4 w-full max-w-6xl flex flex-col md:flex-row md:items-stretch items-center gap-x-12 gap-y-7  mb-5">
