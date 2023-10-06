@@ -182,22 +182,40 @@ const Footer = () => {
               </div>
             </ScrollLink>
 
-            <Link to="service">
+            <ScrollLink
+              to="staking"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
+              className="w-full"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
-                  Sevices
+                Sevices
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
-            </Link>
-            <Link to="service">
+            </ScrollLink>
+
+            <ScrollLink
+              to="whatWeAre"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
+              className="w-full"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
-                  How It Works
+                How It Works
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
-            </Link>
+            </ScrollLink>
+
           </div>
           <div className="  col-span-1 flex flex-col gap-3">
             <h2 className="  font-bold text-lg">Quick Links</h2>
@@ -209,18 +227,29 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </Link>
-            <Link to="specialoffers">
+
+            <ScrollLink
+              to="specialoffers"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
+              className="w-full"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
-                  Special Offers
+                Special Offers
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
-            </Link>
+            </ScrollLink>
+
+
           </div>
           <div className="  col-span-1 flex flex-col gap-3">
             <h2 className=" font-bold text-lg ">Get In Touch</h2>
-            <Link to="footer">
+            <Link to="contact">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
                   Contact Us
@@ -228,14 +257,22 @@ const Footer = () => {
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
             </Link>
-            <Link to="faq">
+            <ScrollLink
+              to="faq"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={this?.handleSetActive}
+              className="w-full"
+            >
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
-                  FAQ
+                FAQ
                 </span>
                 <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-orange-400 to-red-500 transform origin-left scale-x-0 transition-transform ease-out duration-300 group-hover:scale-x-100"></div>
               </div>
-            </Link>
+            </ScrollLink>
             <Link to="login">
               <div className="relative inline-block group">
                 <span className="text-gr1 font-semibold relative z-10 group-hover:text-red-500">
