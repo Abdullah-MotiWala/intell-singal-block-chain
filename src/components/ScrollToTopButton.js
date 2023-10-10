@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
   return (
     isVisible && (
       <button
-        className={`scroll-to-top-button z-50 rounded-full bg-white p-4 font-black fixed bottom-2 right-2 ${
+        className={`scroll-to-top-button z-50 rounded-full hover:animate-pulse bg-white p-4 font-black fixed bottom-10 right-2 ${
           isVisible ? "visible" : ""
         }`}
         onClick={scrollToTop}
