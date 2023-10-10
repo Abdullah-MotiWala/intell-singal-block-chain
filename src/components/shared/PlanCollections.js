@@ -13,7 +13,7 @@ export const Plan1 = () => {
         <div className="border-b py-5">
           <div className="flex">
             <p className="text-white font-bold">Number of days</p>
-            <p className="text-white ml-auto font-semibold">1</p>
+            <p className="text-white ml-auto font-semibold">30</p>
           </div>
           <div className="flex">
             <p className="text-white font-semibold">Number of Signals</p>
@@ -183,7 +183,7 @@ export const Plan5 = () => {
 };
 const allPlans = [Plan1, Plan2, Plan3, Plan4, Plan5];
 export const packageData = [
-  { expiredAt: 1, name: "Free" },
+  { expiredAt: 30, name: "Free" },
   { expiredAt: 30, name: "Premium" },
   { expiredAt: 30, name: "VIP" },
   { expiredAt: 30, name: "Premium" },
