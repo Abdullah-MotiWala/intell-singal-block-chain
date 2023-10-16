@@ -1,0 +1,41 @@
+[33mcommit b9712db98debd90242444d25bd77ca3b62fc0c4c[m[33m ([m[1;36mHEAD -> [m[1;32mnew[m[33m, [m[1;31morigin/fix/client-feedback[m[33m, [m[1;32mfix/client-feedback[m[33m)[m
+Author: Abdullah-MotiWala <motiwalaabdullah100@gmail.com>
+Date:   Tue Sep 19 05:12:34 2023 +0500
+
+    all the required client feedback done
+
+[33mcommit a4fbebc53a98b556abc28d894e50fb005650b953[m
+Author: Abdullah-MotiWala <motiwalaabdullah100@gmail.com>
+Date:   Sun Sep 17 17:23:16 2023 +0500
+
+    small bug resolved
+
+[33mcommit 9711ae3add65bf1b49c7d9060d4166837d11b1de[m
+Author: Abdullah-MotiWala <motiwalaabdullah100@gmail.com>
+Date:   Sun Sep 17 17:06:59 2023 +0500
+
+    ready to deploy
+
+[33mcommit 41cf23b3b294b5dbeec9bf0ca9eb2b70e93da581[m
+Author: Abdullah-MotiWala <motiwalaabdullah100@gmail.com>
+Date:   Sat Sep 16 23:53:34 2023 +0500
+
+    all functionalities done
+
+[33mcommit 20c2bc3c58b082e239293b5a8746ba504b93e6ec[m
+Author: Muzammildevs <muzammil.devqsols@gmail.com>
+Date:   Sat Sep 16 10:09:01 2023 -0700
+
+    add routes on buttons
+
+[33mcommit 801091af204191f41ed5c1d77f96dab9d29f6d79[m
+Author: Muzammildevs <muzammil.devqsols@gmail.com>
+Date:   Sat Sep 16 09:24:15 2023 -0700
+
+    add count down on dashbaord top bar
+
+[33mcommit 2289dd58cb082fd9291e24a631bc3bf38be9825f[m
+Author: Abdullah-MotiWala <motiwalaabdullah100@gmail.com>
+Date:   Sat Sep 16 20:19:48 2023 +0500
+
+    initial commit:
